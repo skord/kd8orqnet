@@ -1,0 +1,9 @@
+---
+layout: home
+author_profile: true
+permalink: /about-me/
+---
+
+Hi, I'm Mike and this is an update to a sorely neglected website.
+
+I plan on documenting all things infrastructre, radio, and music as they relate to me here.
