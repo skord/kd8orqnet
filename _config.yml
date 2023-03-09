@@ -53,6 +53,12 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/mikedanko"
+    - label: "Youtube"
+      icon: "fab fa-fw fa-youtube"
+      url: "https://www.youtube.com/mikedanko"
+    - label: "Soundcloud"
+      icon: "fab fa-fw fa-soundcloud"
+      url: "https://soundcloud.com/thumplexbumpitron"
 
 footer:
   links:
@@ -68,6 +74,13 @@ footer:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/mikedanko"
+    - label: "Youtube"
+      icon: "fab fa-fw fa-youtube"
+      url: "https://www.youtube.com/mikedanko"
+    - label: "Soundcloud"
+      icon: "fab fa-fw fa-soundcloud"
+      url: "https://soundcloud.com/thumplexbumpitron"
+
 # Build settings
 theme: minimal-mistakes-jekyll
 minimal_mistakes_skin: 'contrast'
