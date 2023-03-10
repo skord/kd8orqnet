@@ -81,6 +81,14 @@ footer:
       icon: "fab fa-fw fa-soundcloud"
       url: "https://soundcloud.com/thumplexbumpitron"
 
+comments:
+  provider               : "disqus"
+  disqus:
+    shortname            : "mikedanko"
+    # show_count           : true
+    # language             : "en"
+    # admin                : "your_disqus_username"
+    # dev                  : false
 # Build settings
 theme: minimal-mistakes-jekyll
 minimal_mistakes_skin: 'contrast'
