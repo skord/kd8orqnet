@@ -17,14 +17,14 @@ Ingredients:
 
 Instructions:
 
-# In a mixing bowl, whisk together the flour, baking powder, salt, Sichuan peppercorn powder, garlic powder, and onion powder.
-# In another mixing bowl, whisk together the eggs, milk, and vegetable oil.
-# Pour the wet ingredients into the dry ingredients and whisk until just combined. Don't overmix the batter.
-# Preheat your waffle maker according to its instructions.
-# Grease the waffle maker with cooking spray or vegetable oil.
-# Spoon some batter onto the waffle maker and spread it out evenly with a spatula.
-# Place some Sichuan-style pork or beef filling in the center of the batter.
-# Spoon some more batter over the filling, making sure to cover it completely.
-# Close the waffle maker and cook until the waffles are golden brown and crispy.
-# Repeat with the remaining batter and filling.
-# Serve the Sichuan stuffing waffles hot with your favorite dipping sauce, such as soy sauce or chili oil.
+1.  In a mixing bowl, whisk together the flour, baking powder, salt, Sichuan peppercorn powder, garlic powder, and onion powder.
+2.  In another mixing bowl, whisk together the eggs, milk, and vegetable oil.
+3. Pour the wet ingredients into the dry ingredients and whisk until just combined. Don't overmix the batter.
+4.  Preheat your waffle maker according to its instructions.
+5.  Grease the waffle maker with cooking spray or vegetable oil.
+6.  Spoon some batter onto the waffle maker and spread it out evenly with a spatula.
+7.  Place some Sichuan-style pork or beef filling in the center of the batter.
+8.  Spoon some more batter over the filling, making sure to cover it completely.
+9.  Close the waffle maker and cook until the waffles are golden brown and crispy.
+10. Repeat with the remaining batter and filling.
+11. Serve the Sichuan stuffing waffles hot with your favorite dipping sauce, such as soy sauce or chili oil.
