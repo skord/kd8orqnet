@@ -1,8 +1,11 @@
 ---
 title: "Sichuan Stuffing Waffles"
 ---
-Ingredients:
 
+Sichuan cuisine is famous for its bold and spicy flavors, and its dishes often feature a combination of numbing Sichuan peppercorns and fiery chili peppers. In this recipe, we're taking a classic breakfast food - waffles - and giving it a Sichuan twist by adding a flavorful stuffing of Sichuan-style pork or beef. The result is a crispy and savory waffle that's bursting with bold and aromatic flavors. Whether you're a fan of Sichuan cuisine or just looking to try something new and exciting, these Sichuan stuffing waffles are definitely worth a try!
+
+
+Ingredients:
 
 * 2 cups all-purpose flour
 * 1 tablespoon baking powder
