@@ -1,8 +1,9 @@
 ---
 title: Instant Pot Black Beans
+date: 2023-03-21
+categories: [recipes]
+tags: [vegetarian, vegan, gluten-free, side, ai-generated]
 ---
-
-_Note: This is entirely AI generated_
 
 Black beans are a staple in many cuisines around the world and are a great source of protein, fiber, and other essential nutrients. Cooking black beans in an Instant Pot is a quick and easy way to prepare them, and adding spices to the mix can take the flavor to the next level. In this post, we'll share a simple recipe for cooking black beans with spices in an Instant Pot, so you can enjoy this delicious and nutritious legume in a variety of dishes. Whether you're making a hearty bean soup, a flavorful bean salad, or a filling bean burrito, these Instant Pot black beans with spices are sure to add a delicious kick to your meal.
 
@@ -26,3 +27,5 @@ Black beans are a staple in many cuisines around the world and are a great sourc
 7. Serve the black beans as desired, garnished with your favorite toppings such as chopped fresh cilantro, diced avocado, lime wedges, or shredded cheese.
 
 By soaking the beans beforehand, you can significantly reduce the cooking time in the Instant Pot while still achieving tender and flavorful black beans. Enjoy!
+
+_Note: This is entirely AI generated_
