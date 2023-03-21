@@ -2,7 +2,7 @@
 title: Hearty Potato and Beluga Lentil Stew
 date: 2023-03-21
 categories: [recipes]
-tags: [vegetarian, vegan, gluten-free, side, ai-generated]
+tags: [vegetarian, vegan, gluten-free, ai-generated]
 ---
 
 Beluga lentils are a tasty and nutritious ingredient that can be used in a variety of dishes. In this recipe, we'll show you how to make a delicious and filling Potato and Beluga Lentil Stew that's perfect for a cozy dinner on a cold day.
