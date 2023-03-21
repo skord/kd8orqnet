@@ -1,8 +1,9 @@
 ---
 title: "Vegan Chana Masala"
+date: 2023-03-21
+categories: [recipes]
+tags: [vegetarian, vegan, gluten-free, side, ai-generated]
 ---
-
-_Note: The entirety of this is AI generated._
 
 Are you looking for a delicious, healthy, and easy-to-make recipe that'll add a burst of flavor to your dinner table? Look no further! Our spicy chana masala recipe is a must-try for anyone who loves bold and aromatic Indian cuisine. This dish is not only vegan and gluten-free, but it also makes use of convenient pantry staples like canned tomatoes and chickpeas, ensuring that you can whip up this scrumptious meal even on the busiest of weeknights.
 
@@ -41,3 +42,5 @@ Get ready to embark on a culinary journey to the heart of India as we guide you 
 8. Stir in the amchur powder or lemon juice to add tanginess to the dish.
 9. Taste and adjust the seasonings, adding more salt, chili powder, or amchur/lemon juice as needed.
 10. Garnish with fresh cilantro leaves and serve hot with rice, naan, or your favorite Indian bread.
+
+_Note: The entirety of this is AI generated._
