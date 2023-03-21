@@ -83,7 +83,7 @@ footer:
 
 # Build settings
 theme: minimal-mistakes-jekyll
-minimal_mistakes_skin: 'contrast'
+minimal_mistakes_skin: 'default'
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
@@ -109,10 +109,10 @@ comments:
     theme: "preferred_color_scheme"
 
 category_archive:
-  type: liquid
+  type: jekyll-archives
   path: /categories/
 tag_archive:
-  type: liquid
+  type: jekyll-archives
   path: /tags/
 
 exclude:
@@ -206,3 +206,15 @@ collections:
   recipes:
     output: true
     permalink: /:collection/:path/
+
+
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
