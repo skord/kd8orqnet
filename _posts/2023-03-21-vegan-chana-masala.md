@@ -1,6 +1,6 @@
 ---
 title: "Vegan Chana Masala"
-date: 2023-03-21
+date: 2023-03-22
 categories: [recipes]
 tags: [vegetarian, vegan, gluten-free, side, ai-generated]
 ---
@@ -44,3 +44,13 @@ Get ready to embark on a culinary journey to the heart of India as we guide you 
 10. Garnish with fresh cilantro leaves and serve hot with rice, naan, or your favorite Indian bread.
 
 _Note: The entirety of this is AI generated._
+
+### Update from the person, not the AI
+
+I made this on 03/23/2023. We made it with jasmine rice and naan. I didn't have amchur, so we opted for the lemon juice.
+
+I would opt for more chili's and some cayenne pepper next time around. The flavor was good, but it was a little bland. I think the lemon juice helped with that, but I would like to try it again with more spice.
+
+I made this in a 6.5 quart cast iron dutch oven and when it came time to add the liquids, I had to add a little more water than the recipe called for. I think it was about 2 cups of water total, and then I let it cook down for about 25 minutes.
+
+I would not make this in a skillet, that would be madness as the volume of the recipe is too much for a skillet. Anywhere from a 4 to 6 quart pot would do.
