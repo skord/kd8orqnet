@@ -56,6 +56,9 @@ author:
     - label: "Youtube"
       icon: "fab fa-fw fa-youtube"
       url: "https://www.youtube.com/mikedanko"
+    - label: "Twitch"
+      icon: "fab fa-fw fa-twitch"
+      url: "https://www.twitch.tv/thumplexbumpitron"
     - label: "Soundcloud"
       icon: "fab fa-fw fa-soundcloud"
       url: "https://soundcloud.com/thumplexbumpitron"
@@ -80,6 +83,9 @@ footer:
     - label: "Soundcloud"
       icon: "fab fa-fw fa-soundcloud"
       url: "https://soundcloud.com/thumplexbumpitron"
+    - label: "Twitch"
+      icon: "fab fa-fw fa-twitch"
+      url: "https://www.twitch.tv/thumplexbumpitron"
 
 # Build settings
 theme: minimal-mistakes-jekyll
