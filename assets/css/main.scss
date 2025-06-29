@@ -13,3 +13,16 @@
 .page__content {
   font-size: 0.9em;
 }
+
+// Reddit button styling
+.btn--reddit {
+  color: #fff;
+  background-color: #ff4500;
+  border-color: #ff4500;
+  
+  &:hover {
+    color: #fff;
+    background-color: darken(#ff4500, 10%);
+    border-color: darken(#ff4500, 10%);
+  }
+}
