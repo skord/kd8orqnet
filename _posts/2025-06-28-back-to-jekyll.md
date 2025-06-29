@@ -3,38 +3,18 @@ title: "Back to Jekyll"
 date: 2025-06-28
 categories: [general]
 ---
-I spent a good while buying into the "all your notes in one place" hype: second brains, Zettelkasten, Markdown for everything, and so on. I tried to make Obsidian my one-stop shop for notes, writing, research, and whatever else people think is the answer to their organization problems.
+I tried the whole “everything in one place” note-taking experiment for a while. Obsidian, second brain, Zettelkasten, whatever you want to call it. There are plenty of nerds on the internet who will tell you it’s the answer to all your problems if you just get enough plugins and hotkeys sorted out. I bought in for a bit.
 
-It didn't really stick.
+It didn’t do much for me. At least, not in the way people seem to promise.
 
-#### Meeting Notes Actually Need a Calendar
+For meeting notes, Agenda.app works better. I don’t need to explain it—calendar, notes, decent search, and it’s designed for meetings, not for people who want to build a private wiki about their lives.
 
-Agenda.app just does a better job for meetings. Integrated calendar, timestamps, context. You know, things you actually need for meetings. Obsidian can technically do it if you throw enough plugins at it, but why bother? Agenda just works.
+Obsidian is fine for longer stuff or project notes. But dumping everything in there just made a mess. Instead of having lots of places to lose track of things, I just had one big one. The “second brain” just became a bigger, dumber version of the first.
 
-#### Obsidian Is Fine for Writing, But That's It
+Obsidian Publish was supposed to make it easy to share some notes online, but it turns out I barely remembered it existed most of the time. It costs more than it should, can’t really handle multiple domains, and you don’t get much control over how things are published. If you’re used to tweaking your own static site, it feels like going backwards.
 
-Obsidian's good for longer-form writing or documentation, sure. But for "quick capture" or the endless little scraps that accumulate, I'd forget where things lived, or I'd end up with a mess of half-connected notes. There's a limit to how many times you can reorganize a note before you realize the system isn't helping.
+The other problem, and this is one I don’t see talked about much, is that all the content I had on Obsidian Publish made for a terrible blog. It wasn’t structured as posts. Formatting was all over the place. Most of it was unfinished, or personal, or just not something anyone else should ever see. If I want to bring anything over to Jekyll, it’s going to be a project. I’ll have to pick through, see if anything’s worth saving, and clean it up before it even resembles a blog post. Most of it probably won’t make the cut.
 
-#### Obsidian Publish: Pricey and Not Flexible
+So, back to Jekyll. I write in Markdown, I push to GitHub, and the site updates. I point whatever domains I want at it, set things up how I like, and don’t have to think about monthly subscriptions or if some new app is about to break my workflow. It’s not magic, but it works, and it’s not pretending to be anything more than a pile of text files and some templates.
 
-Obsidian Publish seemed like a nice way to get my notes online, until I realized I kept forgetting it even existed. It's not cheap, either, and it doesn't offer the flexibility I want. You get what they give you.
-
-#### No Support for Multiple Domains
-
-Another big one: I need to point multiple domains at my published notes. Obsidian Publish doesn't support that. With Jekyll, it's trivial: point as many domains as you want, set up whatever redirects you need, and move on with your life.
-
-#### Out of Sight, Out of Mind
-
-The reality is, I just didn't think about Obsidian Publish when I was note-taking or writing. If you're going to bother putting something on the web, you should be able to control it, update it easily, and *remember* you have it.
-
-#### Why I'm Back on Jekyll
-
-So, I'm switching back to Jekyll. I get total control over publishing. The workflow fits my brain: write in Markdown, push to GitHub, site's updated. No monthly fee, no vendor lock-in, no trying to shoehorn everything into a system that promises to make you smarter.
-
-Obsidian's still fine for long-form notes or projects, but I don't need a "second brain." One is more than enough work already.
-
-#### Copying Back
-
-One thing I should mention: copying content from Obsidian Publish back to Jekyll isn't just a technical hassle. It's about the content itself. Most of what I wrote in Obsidian was never meant to be blog posts. It's a pile of scattered notes, fragments, lists, unfinished thoughts, and personal scraps. A lot of it doesn't make sense as a blog post, at least not without serious editing.
-
-So if you're wondering why I'm not just dumping everything straight into the new blog, it's because I can't. I'll need to go through my notes, figure out what's actually worth sharing, and then rewrite or rework it into something readable. That's a real process, and frankly, a lot of what's in there probably shouldn't ever be published.
+I’m sure I’ll get annoyed with this setup eventually and try something else. But for now, this is good enough.
