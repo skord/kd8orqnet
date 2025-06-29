@@ -4,6 +4,7 @@ categories: [recipes]
 date: 2025-06-29
 tags: [ice cream]
 layout: single
+author_profile: false
 toc: true
 ---
 This is a basic base recipe for the Ninja Creami ice cream maker. It can be used as a starting point for various flavors. It makes about 500ml of base before it is processed in the machine if you don't add anything to it. The xanthan gum and guar gum help with the texture and creaminess of the ice cream, but you can omit them if you prefer a simpler recipe.
