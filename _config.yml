@@ -27,7 +27,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   This is the website for Mike Danko, a software developer in the Columbus Ohio Area.
   I'm also a father, a radio amateur (KD8ORQ), and a musician.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://mikedanko.me" # the base hostname & protocol for your site, e.g. http://example.com
 repository: skord/kd8orqnet
 logo: "/assets/images/mines-danger.jpg"
 
@@ -96,6 +96,12 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+
+# Collections
+collections:
+  recipes:
+    output: true
+    permalink: /:collection/:name/
 
 whitelist:
   - jekyll-paginate
@@ -203,6 +209,15 @@ defaults:
     values:
       layout: single
       author_profile: false
+      share: true
+      comments: false
+  # _recipes
+  - scope:
+      path: ""
+      type: recipes
+    values:
+      layout: single
+      author_profile: true
       share: true
       comments: false
 

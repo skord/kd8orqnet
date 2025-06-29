@@ -4,6 +4,8 @@ main:
     url: /categories/
   - title: "Tags"
     url: /tags/
+  - title: "Recipes"
+    url: /recipes/
   - title: "About"
     url: /about/
   # - title: "Quick-Start Guide"
