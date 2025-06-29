@@ -34,4 +34,6 @@ So, I’m switching back to Jekyll. I get total control over publishing. The wor
 Obsidian’s still fine for long-form notes or projects, but I don’t need a “second brain.” One is more than enough work already.
 
 ## Copying Back
-I had some interesting content I'd written on the Obsidian Publish site and I'll work on copying it back here. It might take a bit, but I think it’s worth it to have everything in one place again.
+One thing I should mention: copying content from Obsidian Publish back to Jekyll isn’t just a technical hassle—it’s about the content itself. Most of what I wrote in Obsidian was never meant to be blog posts. It’s a pile of scattered notes, fragments, lists, unfinished thoughts, and personal scraps. A lot of it doesn’t make sense as a blog post, at least not without serious editing.
+
+So if you’re wondering why I’m not just dumping everything straight into the new blog, it’s because I can’t. I’ll need to go through my notes, figure out what’s actually worth sharing, and then rewrite or rework it into something readable. That’s a real process—and frankly, a lot of what’s in there probably shouldn’t ever be published.
