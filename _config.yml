@@ -104,15 +104,15 @@ whitelist:
   - jekyll-feed
   - jekyll-include-cache
 
-comments:
-  provider: "giscus"
-  giscus:
-    repo_id: "R_kgDOJH90gA"
-    category_name: "General"
-    category_id: "DIC_kwDOJH90gM4CUycM"
-    discussion_term: "pathname"
-    reactions_enabled: 1
-    theme: "preferred_color_scheme"
+# comments:
+#   provider: "giscus"
+#   giscus:
+#     repo_id: "R_kgDOJH90gA"
+#     category_name: "General"
+#     category_id: "DIC_kwDOJH90gM4CUycM"
+#     discussion_term: "pathname"
+#     reactions_enabled: 1
+#     theme: "preferred_color_scheme"
 
 category_archive:
   type: jekyll-archives
@@ -185,7 +185,7 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: true
+      comments: false
       share: true
       related: true
       show_date: true
@@ -196,7 +196,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      comments: true
+      comments: false
   - scope:
       path: ""
       type: portfolio
@@ -204,7 +204,7 @@ defaults:
       layout: single
       author_profile: false
       share: true
-      comments: true
+      comments: false
 
 
 jekyll-archives:
