@@ -14,29 +14,15 @@
   font-size: 0.9em;
 }
 
-// Fix excessive spacing on homepage
-.archive {
-  padding-top: 0 !important;
-  margin-top: 0 !important;
-}
-
-.archive .page__content {
-  margin: 0 !important;
-  padding: 0 !important;
-  display: none !important;
-}
-
-.list__item {
-  padding-top: 0 !important;
-  margin-top: 0 !important;
-}
-
-.list__item:first-child {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-.archive__item-title {
-  margin-top: 0 !important;
-  margin-bottom: 0.5em !important;
+// Reddit button styling
+.btn--reddit {
+  color: #fff;
+  background-color: #ff4500;
+  border-color: #ff4500;
+  
+  &:hover {
+    color: #fff;
+    background-color: darken(#ff4500, 10%);
+    border-color: darken(#ff4500, 10%);
+  }
 }
