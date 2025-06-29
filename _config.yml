@@ -97,6 +97,12 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
 
+# Collections
+collections:
+  recipes:
+    output: true
+    permalink: /:collection/:name/
+
 whitelist:
   - jekyll-paginate
   - jekyll-sitemap
@@ -203,6 +209,15 @@ defaults:
     values:
       layout: single
       author_profile: false
+      share: true
+      comments: false
+  # _recipes
+  - scope:
+      path: ""
+      type: recipes
+    values:
+      layout: single
+      author_profile: true
       share: true
       comments: false
 
