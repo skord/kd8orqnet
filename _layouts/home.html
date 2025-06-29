@@ -1,0 +1,17 @@
+---
+layout: archive
+---
+
+{{ content }}
+
+{% assign entries = site.posts %}
+
+{% if page.entries_layout %}
+  {% assign entries_layout = page.entries_layout %}
+{% else %}
+  {% assign entries_layout = 'list' %}
+{% endif %}
+
+{% for post in entries %}
+  {% include archive-single.html type=entries_layout %}
+{% endfor %}
