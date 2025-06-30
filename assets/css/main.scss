@@ -3,23 +3,21 @@
 ---
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+
+// Override type scale for smaller text
+$type-size-5: 0.9em !default;
+
+
 @import "minimal-mistakes"; // main partials
 
 // Custom styles
-.page__content p {
-  font-size: 0.9em;
-}
-
-.page__content {
-  font-size: 0.9em;
-}
 
 // Author avatar styling
 .author__avatar img {
   border-radius: 50%; // Circular
 }
 
-// Reddit button styling
+Reddit button styling
 .btn--reddit {
   color: #fff;
   background-color: #ff4500;
