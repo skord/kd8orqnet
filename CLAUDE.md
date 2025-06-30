@@ -32,7 +32,6 @@ This is a Jekyll static site using the **Minimal Mistakes** theme, deployed on D
 **Key Configuration:**
 - Comments disabled (giscus config commented out)
 - Social sharing enabled but no Twitter/X
-- Author profile sidebar enabled without avatar
 - Jekyll Archives plugin generates category/tag pages
 - Excerpt truncation customized to 500 characters
 
