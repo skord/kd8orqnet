@@ -14,10 +14,10 @@ I make this in my Emile Henry Pullman/Long Loaf Bread Baker, but any clay or cer
 
 ## Ingredients
 
-- Bread flour: 400g
-- Water: 300g
-- Salt: 8g
-- Instant yeast: 3g
+- Bread flour: 750g
+- Water: 550g
+- Salt: 15g
+- Instant yeast: 6g
 
 ## Instructions
 
