@@ -37,13 +37,13 @@ a { color: inherit; text-decoration: none; }
 }
 
 .site-name {
-  font-size: 1.1rem;
+  font-size: 2.25rem;
   font-weight: 700;
-  color: var(--text);
+  color: var(--primary);
   letter-spacing: -0.03em;
   transition: color 0.2s;
 }
-.site-name:hover { color: var(--primary); }
+.site-name:hover { color: var(--primary-hover); }
 
 // --- Directory ---
 
