@@ -1,20 +1,23 @@
-# main links
-main:
-  - title: "Categories"
-    url: /categories/
-  - title: "Tags"
-    url: /tags/
-  - title: "Recipes"
+directory:
+  - title: Radio
+    url: /radio/
+  - title: Instruments & Audio
+    url: /instruments/
+  - title: Bookmarks
+    url: /bookmarks/
+  - title: Recipes
     url: /recipes/
-  - title: "About"
+  - title: Travel
+    url: /travel/
+  - title: Books
+    url: /books/
+  - title: EDC
+    url: /edc/
+  - title: Now
+    url: /now/
+  - title: About
     url: /about/
-  # - title: "Quick-Start Guide"
-  #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+  - title: Contact
+    url: /contact/
+  - title: RSS
+    url: /feed.xml
