@@ -1,6 +1,6 @@
 ---
-layout: single
-author_profile: true
+title: About
+layout: about
 permalink: /about/
 ---
 

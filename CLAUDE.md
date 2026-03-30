@@ -16,24 +16,42 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Site Architecture
 
-This is a Jekyll static site using the **Minimal Mistakes** theme, deployed on DigitalOcean App Platform.
+This is a Jekyll static site with a custom theme (no gem-based theme), deployed on DigitalOcean App Platform.
 
-**Theme Customizations:**
-- Custom `_layouts/home.html` - Removes "Recent Posts" heading from index
-- Custom `_includes/archive-single.html` - Extends excerpt length to 500 chars and adds "Read more →" links
-- Custom `_includes/social-share.html` - Removes Twitter/X, keeps Facebook, LinkedIn, and Bluesky
-- Custom CSS in `assets/css/main.scss` - Reduces font size and fixes homepage spacing issues
+**Typography:**
+- Inter (Google Fonts) for all UI elements: site name, navigation, post titles, dates, labels, pagination, footer
+- Lora (Google Fonts, serif) for reading text: post body content, excerpts, page content
+
+**Layout:**
+- Single column, max-width 720px, centered. No sidebar.
+- Colors: #ffffff background, #1a1a1a text, #924a28 terracotta accent (hover states only)
+- Design rules: No 1px border dividers, 4px border radius only, no drop shadows, no hero sections, no sticky nav
+
+**Layouts:**
+- `_layouts/default.html` - Base HTML shell with Google Fonts, CSS, header/footer includes
+- `_layouts/home.html` - Homepage with directory grid + paginated posts (5 per page via jekyll-paginate)
+- `_layouts/post.html` - Single blog post with title, date, optional hero image, body content
+- `_layouts/page.html` - Generic page layout (title + content)
+- `_layouts/single.html` - Alias for page layout (used by recipes collection)
+- Section-specific layouts extending page: radio, recipes, bookmarks, books, travel, instruments, edc, now, about, contact
+- `_layouts/recipes.html` - Lists the recipes collection after page content
+
+**Includes:**
+- `_includes/header.html` - Site name as a plain text link
+- `_includes/footer.html` - Social links and copyright line
+- `_includes/directory.html` - 3-column grid of underlined section links (2 columns on mobile)
 
 **Content Organization:**
-- Posts in `_posts/` with categories: general, radio, recipes, update
-- Static pages in `_pages/` for Categories and Tags archives
-- Navigation configured in `_data/navigation.yml`
+- Posts in `_posts/` - blog posts with optional `image` front matter field for hero images
+- Pages in `_pages/` - first-class section pages (Radio, Recipes, Bookmarks, Books, Travel, Instruments & Audio, EDC, Now, About, Contact)
+- Recipes collection in `_recipes/` with output enabled
+- Directory links configured in `_data/navigation.yml`
+- Social links configured in `_config.yml` under `social_links`
 
 **Key Configuration:**
-- Comments disabled (giscus config commented out)
-- Social sharing enabled but no Twitter/X
-- Jekyll Archives plugin generates category/tag pages
-- Excerpt truncation customized to 500 characters
+- Pagination: 5 posts per page via jekyll-paginate
+- No categories or tags archive pages
+- No comments system
 
 **Deployment:**
 - DigitalOcean App Platform via `.do/app.yaml`
@@ -44,5 +62,6 @@ This is a Jekyll static site using the **Minimal Mistakes** theme, deployed on D
 **Content Guidelines:**
 - Post filename format: `YYYY-MM-DD-title.md`
 - Front matter requires: title, date, categories
+- Optional front matter: `image` (path to hero image, displayed at 16:9 aspect ratio)
 - Uses `####` for post subheadings (not `##`)
 - Avoid em dashes in content
