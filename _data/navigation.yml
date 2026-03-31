@@ -1,4 +1,6 @@
 directory:
+  - title: Journal
+    url: /
   - title: Radio
     url: /radio/
   - title: Instruments & Audio
