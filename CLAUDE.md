@@ -33,7 +33,7 @@ This is a Jekyll static site with a custom theme (no gem-based theme), deployed 
 - `_layouts/post.html` - Single blog post with title, date, optional hero image, body content
 - `_layouts/page.html` - Generic page layout (title + content)
 - `_layouts/single.html` - Alias for page layout (used by recipes collection)
-- Section-specific layouts extending page: radio, recipes, bookmarks, books, travel, instruments, edc, now, about, contact
+- Section-specific layouts extending page: radio, recipes, bookmarks, books, bicycle, instruments, edc, now, about, contact
 - `_layouts/recipes.html` - Lists the recipes collection after page content
 
 **Includes:**
@@ -43,7 +43,7 @@ This is a Jekyll static site with a custom theme (no gem-based theme), deployed 
 
 **Content Organization:**
 - Posts in `_posts/` - blog posts with optional `image` front matter field for hero images
-- Pages in `_pages/` - first-class section pages (Radio, Recipes, Bookmarks, Books, Travel, Instruments & Audio, EDC, Now, About, Contact)
+- Pages in `_pages/` - first-class section pages (Radio, Recipes, Bookmarks, Books, Bicycle, Instruments & Audio, EDC, Now, About, Contact)
 - Recipes collection in `_recipes/` with output enabled
 - Directory links configured in `_data/navigation.yml`
 - Social links configured in `_config.yml` under `social_links`
