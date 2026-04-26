@@ -16,11 +16,19 @@ if ! command -v magick >/dev/null 2>&1; then
   exit 0
 fi
 
+# Check staged blob content (not the working-tree file), so post-stage edits
+# can't slip through.
+tmpdir=$(mktemp -d)
+trap 'rm -rf "$tmpdir"' EXIT
+
 violations=()
+i=0
 for img in "${staged[@]}"; do
-  [[ -f "$img" ]] || continue
-  bytes=$(stat -c%s "$img")
-  read -r w h < <(magick identify -format '%w %h\n' "$img" 2>/dev/null || echo "0 0")
+  tmp="$tmpdir/blob.$i.${img##*.}"
+  i=$((i + 1))
+  git show ":$img" > "$tmp" 2>/dev/null || continue
+  bytes=$(stat -c%s "$tmp")
+  read -r w h < <(magick identify -format '%w %h\n' "$tmp" 2>/dev/null || echo "0 0")
   longest=$(( w > h ? w : h ))
   ext_lc="${img##*.}"
   ext_lc="${ext_lc,,}"
