@@ -62,15 +62,15 @@ debian@kiwisdr:~$ sudo ip link set wlan0 up
 
 Now we should be able to use `wavemon` to scan for networks. `wavemon` is an ncurses based way to more conveniently browse wireless networks. We'll run `sudo wavemon` and check things out.
 
-<img src="/assets/images/kiwisdr/Pasted image 20240906100506.png" alt="Wavemon on KiwiSDR" >
+<img src="/assets/images/graphics/kiwisdr/Pasted image 20240906100506.png" alt="Wavemon on KiwiSDR" >
 
 Ok, so nothing yet, we'll have to hit `F3` and initiate a scan:
 
-<img src="/assets/images/kiwisdr/Pasted image 20240906100608.png" alt="Wavemon Scan on KiwiSDR" >
+<img src="/assets/images/graphics/kiwisdr/Pasted image 20240906100608.png" alt="Wavemon Scan on KiwiSDR" >
 
 So this is where it's wild. Let's explore with a not-to-scale KD8ORQ home diagram:
 
-<img src="/assets/images/kiwisdr/Untitled-2024-09-06-1017.png" alt="KD8ORQ Home Diagram">
+<img src="/assets/images/graphics/kiwisdr/Untitled-2024-09-06-1017.png" alt="KD8ORQ Home Diagram">
 
 The `dankostan_EXT` extender was installed because the extender in the garage didn't get enough signal to connect to the modem in the front of the house. According to `wavemon`, the USB stick+antenna averages a 10dB better signal than the intermediary extender (dankostan_EXT) I was intending to use. So we'll setup the KiwiSDR to use the original AP in the front of the house and once the Wifi is working on the KiwiSDR, all the extenders can be removed[^1]!
 
@@ -150,7 +150,7 @@ debian@kiwisdr:~$ ip addr show wlan0
 
 So let's go detach the ethernet, reboot and try this (not in that order, but yes):
 
-<img src="/assets/images/kiwisdr/Pasted image 20240906111045.png" alt="Waterfall on KiwiSDR" >
+<img src="/assets/images/graphics/kiwisdr/Pasted image 20240906111045.png" alt="Waterfall on KiwiSDR" >
 
 AWWWW YEAH! I zoomed in and the carrier noise from before is gone. The part that is wild is that the noise floor is 1-2 dB off from where the KiwiSDR would be with no antenna attached!
 

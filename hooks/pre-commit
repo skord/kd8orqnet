@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+# Guard against committing oversized images. Run bin/optimize-images.sh to fix.
+
+set -euo pipefail
+
+MAX_EDGE=1600
+MAX_BYTES=$((500 * 1024))
+
+mapfile -t staged < <(git diff --cached --name-only --diff-filter=ACM \
+  | grep -iE '^assets/images/photos/.*\.(jpe?g|png)$' || true)
+
+[[ ${#staged[@]} -eq 0 ]] && exit 0
+
+if ! command -v magick >/dev/null 2>&1; then
+  echo "warning: ImageMagick not found; skipping image size check" >&2
+  exit 0
+fi
+
+violations=()
+for img in "${staged[@]}"; do
+  [[ -f "$img" ]] || continue
+  bytes=$(stat -c%s "$img")
+  read -r w h < <(magick identify -format '%w %h\n' "$img" 2>/dev/null || echo "0 0")
+  longest=$(( w > h ? w : h ))
+  ext_lc="${img##*.}"
+  ext_lc="${ext_lc,,}"
+
+  too_big=0
+  (( longest > MAX_EDGE )) && too_big=1
+  if [[ "$ext_lc" != "png" ]] && (( bytes > MAX_BYTES )); then
+    too_big=1
+  fi
+
+  if (( too_big )); then
+    violations+=("  $img (${w}x${h}, $((bytes / 1024))KB)")
+  fi
+done
+
+if (( ${#violations[@]} > 0 )); then
+  echo "error: oversized images staged for commit:" >&2
+  printf '%s\n' "${violations[@]}" >&2
+  echo "" >&2
+  echo "limits: longest edge <= ${MAX_EDGE}px, file size <= $((MAX_BYTES / 1024))KB" >&2
+  echo "fix: run bin/optimize-images.sh and re-stage" >&2
+  exit 1
+fi
