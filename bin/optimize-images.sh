@@ -14,6 +14,23 @@ PHOTOS_DIR="$ROOT/assets/images/photos"
 ORIGINALS_DIR="$ROOT/_photo-originals"
 TARGET_DIR="${1:-$PHOTOS_DIR}"
 
+# iPhone photos are tagged Display P3. Convert to sRGB before stripping the
+# ICC profile so wide-gamut pixels render correctly in browsers (which assume
+# sRGB when no profile is present).
+SRGB_PROFILE=""
+for p in /usr/share/color/icc/colord/sRGB.icc \
+         /usr/share/color/icc/sRGB.icc \
+         /usr/share/color/icc/sRGB2014.icc \
+         "/System/Library/ColorSync/Profiles/sRGB Profile.icc"; do
+  if [[ -f "$p" ]]; then
+    SRGB_PROFILE="$p"
+    break
+  fi
+done
+if [[ -z "$SRGB_PROFILE" ]]; then
+  echo "warning: no sRGB ICC profile found; output may have incorrect colors" >&2
+fi
+
 if ! command -v magick >/dev/null 2>&1; then
   echo "error: ImageMagick (magick) not found in PATH" >&2
   exit 1
@@ -65,10 +82,14 @@ while IFS= read -r -d '' img; do
   ext_lc="${ext,,}"
   tmp="${img}.optimized.${ext}"
 
+  profile_args=()
+  [[ -n "$SRGB_PROFILE" ]] && profile_args=(-profile "$SRGB_PROFILE")
+
   if [[ "$ext_lc" == "png" ]]; then
     magick "$img" \
       -auto-orient \
       -resize "${MAX_EDGE}x${MAX_EDGE}>" \
+      "${profile_args[@]}" \
       -strip \
       -define png:compression-level=9 \
       "$tmp"
@@ -76,6 +97,7 @@ while IFS= read -r -d '' img; do
     magick "$img" \
       -auto-orient \
       -resize "${MAX_EDGE}x${MAX_EDGE}>" \
+      "${profile_args[@]}" \
       -strip \
       -interlace Plane \
       -sampling-factor 4:2:0 \
