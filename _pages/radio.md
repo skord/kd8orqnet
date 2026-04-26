@@ -1,5 +1,5 @@
 ---
 title: Radio
-layout: radio
+layout: page
 permalink: /radio/
 ---
