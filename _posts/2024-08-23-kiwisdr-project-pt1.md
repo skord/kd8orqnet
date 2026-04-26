@@ -18,7 +18,7 @@ It really wasn't very good for picking up anything but one or two very strong si
 
 I had been waiting on a replacement power supply to arrive for my [W6LVP Receive Only Magloop](https://www.w6lvp.com) and it arrived today. As soon as I plugged the power supply into the power inserter the LED finally came on and I plugged into into the SDR instead of the YouLoop and...
 
-<img src="/assets/images/kiwisdr/Pasted image 20240823145412.png" alt="W6LVP Magloop on KiwiSDR" width="600">
+<img src="/assets/images/graphics/kiwisdr/Pasted image 20240823145412.png" alt="W6LVP Magloop on KiwiSDR" width="600">
 
 The difference was night and day. I am totally listening to crazy people on CB right now very loudly and clearly. The magloop is sitting on top of my laundry hamper inside right now and I'm sure it will only get better when I find more permanent home for it. I don't mean for this to be a comparison between a $35 passive antenna and a significantly more expensive hand made active magloop, but I was just very excited to pull in some signals finally.
 

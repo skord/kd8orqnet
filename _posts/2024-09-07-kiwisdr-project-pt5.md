@@ -15,7 +15,7 @@ So I already have a Tailnet from [Tailscale]([https://tailscale.com](https://tai
 
 I'm now in the directory! Project completed.
 
-<img src="/assets/images/kiwisdr/Pasted image 20240907161609.png" alt="KiwiSDR Listing">
+<img src="/assets/images/graphics/kiwisdr/Pasted image 20240907161609.png" alt="KiwiSDR Listing">
 
 Well, as much as I can be done with it. It's a very noisy day electrically and I feel like I'll constantly be adjusting things, but I'm done with all the hard stuff for now.
 
