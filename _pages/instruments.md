@@ -1,5 +1,5 @@
 ---
 title: Instruments & Audio
-layout: instruments
+layout: page
 permalink: /instruments/
 ---

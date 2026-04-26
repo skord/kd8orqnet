@@ -1,5 +1,5 @@
 ---
 title: EDC
-layout: edc
+layout: page
 permalink: /edc/
 ---

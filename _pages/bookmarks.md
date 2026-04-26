@@ -1,5 +1,5 @@
 ---
 title: Bookmarks
-layout: bookmarks
+layout: page
 permalink: /bookmarks/
 ---
