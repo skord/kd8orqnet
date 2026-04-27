@@ -4,6 +4,8 @@ layout: page
 permalink: /about/
 ---
 
-Hi, I'm Mike and this is an update to a sorely neglected website.
+Hi, I'm Mike Danko
 
-I plan on documenting all things infrastructure, radio, and music as they relate to me here.
+Developer in Columbus, Ohio. Ham radio (KD8ORQ), bikes, software, recipes. Music as Thumplex Bumpitron.
+
+See my [Now Page](/now) for what I'm up to currently.
