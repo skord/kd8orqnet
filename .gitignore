@@ -3,5 +3,5 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor
-_photo-originals/
+_image-originals/
 public/

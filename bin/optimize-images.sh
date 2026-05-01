@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-# Resize and recompress photos under assets/images/photos/ for web delivery.
-# Originals are copied to _photo-originals/ (gitignored) before the first edit,
-# so optimization is reversible. Idempotent on re-runs.
+# Resize and recompress images under assets/images/ for web delivery.
+# Originals are copied to _image-originals/ (gitignored), mirroring the
+# subpath under assets/images/, before the first edit so optimization is
+# reversible. Idempotent on re-runs.
 
 set -euo pipefail
 
@@ -10,8 +11,9 @@ QUALITY=82
 MAX_BYTES=$((500 * 1024))
 TARGET_BYTES=$((480 * 1024))
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-PHOTOS_DIR="$ROOT/assets/images/photos"
-ORIGINALS_DIR="$ROOT/_photo-originals"
+IMAGES_DIR="$ROOT/assets/images"
+PHOTOS_DIR="$IMAGES_DIR/photos"
+ORIGINALS_DIR="$ROOT/_image-originals"
 TARGET_DIR="${1:-$PHOTOS_DIR}"
 
 # iPhone photos are tagged Display P3. Convert to sRGB before stripping the
@@ -36,6 +38,15 @@ if ! command -v magick >/dev/null 2>&1; then
   exit 1
 fi
 
+# Portable file size: GNU stat uses -c%s, BSD stat (macOS) uses -f%z.
+if stat -c%s /dev/null >/dev/null 2>&1; then
+  filesize() { stat -c%s "$1"; }
+else
+  filesize() { stat -f%z "$1"; }
+fi
+
+lower() { printf '%s' "$1" | tr '[:upper:]' '[:lower:]'; }
+
 if [[ ! -d "$TARGET_DIR" ]]; then
   echo "error: directory not found: $TARGET_DIR" >&2
   exit 1
@@ -46,10 +57,9 @@ skipped=0
 
 while IFS= read -r -d '' img; do
   read -r w h < <(magick identify -format '%w %h\n' "$img" 2>/dev/null || echo "0 0")
-  bytes=$(stat -c%s "$img")
+  bytes=$(filesize "$img")
   longest=$(( w > h ? w : h ))
-  ext_lc="${img##*.}"
-  ext_lc="${ext_lc,,}"
+  ext_lc=$(lower "${img##*.}")
 
   # PNGs: only enforce dimensions (size depends on content; can't always shrink further)
   # JPEGs: enforce both dimensions and byte budget
@@ -68,8 +78,8 @@ while IFS= read -r -d '' img; do
   echo "optimizing: ${img#$ROOT/} (${w}x${h}, $((bytes / 1024))KB)"
 
   # Preserve full-resolution original (idempotent: only copy if not already present)
-  if [[ "$img" == "$PHOTOS_DIR/"* ]]; then
-    rel="${img#$PHOTOS_DIR/}"
+  if [[ "$img" == "$IMAGES_DIR/"* ]]; then
+    rel="${img#$IMAGES_DIR/}"
     orig_path="$ORIGINALS_DIR/$rel"
     if [[ ! -f "$orig_path" ]]; then
       mkdir -p "$(dirname "$orig_path")"
@@ -79,7 +89,7 @@ while IFS= read -r -d '' img; do
   fi
 
   ext="${img##*.}"
-  ext_lc="${ext,,}"
+  ext_lc=$(lower "$ext")
   tmp="${img}.optimized.${ext}"
 
   profile_args=()
@@ -107,7 +117,7 @@ while IFS= read -r -d '' img; do
       "$tmp"
   fi
 
-  new_bytes=$(stat -c%s "$tmp")
+  new_bytes=$(filesize "$tmp")
   if (( new_bytes < bytes )); then
     mv "$tmp" "$img"
     echo "  -> $((new_bytes / 1024))KB"

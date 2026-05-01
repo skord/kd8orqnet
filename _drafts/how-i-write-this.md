@@ -15,3 +15,7 @@ It's usually a two part problem. The tools to write suck and/or the tools to pub
 * Tailscale file transfer from Photos app to Linux box. 
 
 ![Image](/assets/images/graphics/editing-a-post-in-vscode.png 'Editing a post in VS Code')
+
+![Image](/assets/images/graphics/editing-a-post-in-typora.png 'Editing a post in Typora')
+
+![Image](/assets/images/graphics/editing-a-post-on-ipad.png 'Editing a post on iPad')

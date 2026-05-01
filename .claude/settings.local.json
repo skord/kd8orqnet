@@ -2,7 +2,14 @@
   "permissions": {
     "allow": [
       "Bash(rg:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(bash --version)",
+      "Read(//opt/homebrew/bin/**)",
+      "Read(//usr/local/bin/**)",
+      "Bash(env bash *)",
+      "Bash(bash -n /Users/mike/Projects/kd8orqnet/bin/optimize-images.sh)",
+      "Bash(command -v magick)",
+      "Bash(/Users/mike/Projects/kd8orqnet/bin/optimize-images.sh)"
     ],
     "deny": []
   }
