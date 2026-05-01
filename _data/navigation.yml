@@ -3,20 +3,26 @@ directory:
     url: /
   - title: Radio
     url: /radio/
-  - title: Instruments & Audio
-    url: /instruments/
-  - title: Bookmarks
-    url: /bookmarks/
   - title: Recipes
     url: /recipes/
+  - title: Updates
+    url: /updates/
+  - title: Music
+    url: /music/
+  - title: Bookmarks
+    url: /bookmarks/
+  - title: Reviews
+    url: /reviews/
   - title: Bicycles
     url: /bicycles/
-  - title: Books
-    url: /books/
-  - title: EDC
-    url: /edc/
+  - title: Movement
+    url: /movement/
   - title: Now
     url: /now/
+  - title: EDC
+    url: /edc/
+  - title: Books
+    url: /books/
   - title: About
     url: /about/
   - title: Contact

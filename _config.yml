@@ -10,9 +10,13 @@ baseurl: ""
 url: "https://mikedanko.me"
 repository: skord/kd8orqnet
 
-# Pagination
-paginate: 5
-paginate_path: "/page:num/"
+# Pagination (jekyll-paginate-v2)
+pagination:
+  enabled: true
+  per_page: 5
+  permalink: '/page:num/'
+  sort_field: 'date'
+  sort_reverse: true
 
 # Social links (used in footer)
 social_links:
@@ -32,7 +36,7 @@ social_links:
 
 # Build settings
 plugins:
-  - jekyll-paginate
+  - jekyll-paginate-v2
   - jekyll-sitemap
   - jekyll-feed
 

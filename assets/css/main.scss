@@ -49,9 +49,8 @@ a { color: inherit; text-decoration: none; }
 
 .directory {
   display: grid;
-  grid-template-columns: repeat(3, auto);
-  gap: 0.4rem 3rem;
-  justify-content: start;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.4rem 2rem;
   margin-bottom: 4rem;
 }
 
@@ -63,10 +62,12 @@ a { color: inherit; text-decoration: none; }
   text-decoration-color: var(--text-dim);
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
-  transition: color 0.15s, text-decoration-color 0.15s;
+  padding: 0 0.25rem;
+  transition: background-color 0.15s, text-decoration-color 0.15s;
 }
 .directory a:hover {
-  color: var(--primary);
+  color: var(--text);
+  background-color: var(--primary);
   text-decoration-color: var(--primary);
 }
 
@@ -492,8 +493,16 @@ a { color: inherit; text-decoration: none; }
   .site { padding: 2rem 1.25rem 4rem; }
 
   .directory {
-    grid-template-columns: repeat(2, auto);
-    gap: 0.4rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.6rem;
+  }
+  .directory a:not(:last-child)::after {
+    content: " ·";
+    color: var(--text-dim);
+    margin-left: 0.6rem;
+    text-decoration: none;
+    display: inline-block;
   }
 
   .post-meta { flex-direction: column; gap: 0.2rem; }

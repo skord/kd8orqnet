@@ -43,7 +43,7 @@ This is a Jekyll static site with a custom theme (no gem-based theme), deployed 
 
 **Content Organization:**
 - Posts in `_posts/` - blog posts with optional `image` front matter field for hero images
-- Pages in `_pages/` - first-class section pages (Radio, Recipes, Bookmarks, Books, Bicycle, Instruments & Audio, EDC, Now, About, Contact)
+- Pages in `_pages/` - first-class section pages (Radio, Recipes, Bookmarks, Books, Bicycle, Music, EDC, Now, About, Contact)
 - Recipes collection in `_recipes/` with output enabled
 - Directory links configured in `_data/navigation.yml`
 - Social links configured in `_config.yml` under `social_links`

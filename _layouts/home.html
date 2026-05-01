@@ -2,6 +2,8 @@
 layout: default
 ---
 
+{% if page.heading %}<h1 class="page-title">{{ page.heading }}</h1>{% endif %}
+
 <section class="posts">
   {% for post in paginator.posts %}
   <article class="post-entry">
