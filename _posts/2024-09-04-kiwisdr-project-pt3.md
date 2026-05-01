@@ -1,4 +1,5 @@
 ---
+typora-root-url: ../
 title: "KiwiSDR Project Part 3"
 date: 2024-09-04
 categories: [radio]

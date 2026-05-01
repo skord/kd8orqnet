@@ -1,4 +1,5 @@
 ---
+typora-root-url: ../
 title: Reviews
 heading: Reviews
 layout: home

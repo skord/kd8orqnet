@@ -1,4 +1,5 @@
 ---
+typora-root-url: ../
 title: About
 layout: page
 permalink: /about/

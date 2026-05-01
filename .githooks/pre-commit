@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# Inject `typora-root-url: ../` into front matter of staged markdown files
+# in _posts, _drafts, _pages, _recipes when missing.
+
+set -euo pipefail
+
+changed=0
+while IFS= read -r file; do
+  [ -z "$file" ] && continue
+  [ -f "$file" ] || continue
+
+  case "$file" in
+    _posts/*.md|_drafts/*.md|_pages/*.md|_recipes/*.md) ;;
+    *) continue ;;
+  esac
+
+  # Must start with YAML front matter delimiter
+  [ "$(head -n 1 "$file")" = "---" ] || continue
+
+  # Skip if already present in the front matter block
+  if awk 'NR==1 && $0=="---" {inblock=1; next} inblock && $0=="---" {exit} inblock && /^typora-root-url:/ {found=1; exit} END {exit !found}' "$file"; then
+    continue
+  fi
+
+  awk 'NR==1 && /^---$/ {print; print "typora-root-url: ../"; next} 1' "$file" > "$file.tmp"
+  mv "$file.tmp" "$file"
+  git add "$file"
+  changed=1
+  echo "pre-commit: injected typora-root-url into $file"
+done < <(git diff --cached --name-only --diff-filter=ACM)
+
+exit 0

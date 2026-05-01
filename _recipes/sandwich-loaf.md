@@ -1,4 +1,5 @@
 ---
+typora-root-url: ../
 title: Sandwich Loaf for Clay Pan
 categories: [recipes]
 date: 2025-12-27

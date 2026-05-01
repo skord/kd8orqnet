@@ -1,4 +1,5 @@
 ---
+typora-root-url: ../
 layout: page
 permalink: /bicycles/
 ---

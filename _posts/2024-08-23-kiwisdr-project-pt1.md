@@ -3,6 +3,7 @@ title: "KiwiSDR Project Part 1"
 date: 2024-08-23
 categories: [radio]
 tags: [radio]
+typora-root-url: ../
 ---
 My KiwiSDR has been shelved for a while due to that I didn't really have a great place to put it where I lived last. Now that I'm someplace I have a place to set it up, it's time to get cracking on it.
 

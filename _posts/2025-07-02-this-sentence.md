@@ -1,4 +1,5 @@
 ---
+typora-root-url: ../
 title: This sentence
 date: 2025-07-02 19:12 -0400
 categories: [general]

@@ -1,4 +1,5 @@
 ---
+typora-root-url: ../
 title: "Abandoning Twitter"
 date: 2023-07-17
 categories: [general]

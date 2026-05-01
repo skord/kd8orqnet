@@ -1,4 +1,5 @@
 ---
+typora-root-url: ../
 title: "KiwiSDR Project Part 6: Final Thoughts"
 date: 2025-06-30
 categories: [radio]

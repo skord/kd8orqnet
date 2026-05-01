@@ -1,4 +1,5 @@
 ---
+typora-root-url: ../
 title: Crusty Rustic White Loaf for Clay Pan
 categories: [recipes]
 date: 2025-12-27

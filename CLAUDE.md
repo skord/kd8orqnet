@@ -62,6 +62,7 @@ This is a Jekyll static site with a custom theme (no gem-based theme), deployed 
 **Content Guidelines:**
 - Post filename format: `YYYY-MM-DD-title.md`
 - Front matter requires: title, date, categories
+- Front matter must also include `typora-root-url: ../` (so Typora resolves `/assets/...` paths against the repo root)
 - Optional front matter: `image` (path to hero image, displayed at 16:9 aspect ratio)
 - Uses `####` for post subheadings (not `##`)
 - Avoid em dashes in content

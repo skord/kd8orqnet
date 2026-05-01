@@ -1,4 +1,5 @@
 ---
+typora-root-url: ../
 title: Updates
 heading: Updates
 layout: home

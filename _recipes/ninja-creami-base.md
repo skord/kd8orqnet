@@ -1,4 +1,5 @@
 ---
+typora-root-url: ../
 title: Ninja Creami Base
 categories: [recipes]
 date: 2025-06-29

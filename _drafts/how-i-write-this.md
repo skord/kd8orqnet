@@ -1,4 +1,5 @@
 ---
+typora-root-url: ../
 title: "How I Write This"
 categories: [general]
 ---
@@ -12,3 +13,5 @@ It's usually a two part problem. The tools to write suck and/or the tools to pub
 * Often Apple Notes copied into vim when SSH'd to another machine from the iPad.
 * I like apple notes because I can dictate into it. 
 * Tailscale file transfer from Photos app to Linux box. 
+
+![Image](/assets/images/graphics/editing-a-post-in-vscode.png 'Editing a post in VS Code')

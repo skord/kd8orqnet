@@ -1,4 +1,5 @@
 ---
+typora-root-url: ../
 title: Now
 layout: page
 permalink: /now/
