@@ -21,6 +21,8 @@ directory:
     url: /now/
   - title: EDC
     url: /edc/
+  - title: Computer
+    url: /computer/
   - title: Books
     url: /books/
   - title: About
