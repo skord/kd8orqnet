@@ -7,6 +7,15 @@ layout: page
 <ul class="recipe-list">
   {% assign sorted_recipes = site.recipes | sort: 'title' %}
   {% for recipe in sorted_recipes %}
-  <li><a href="{{ recipe.url | relative_url }}">{{ recipe.title }}</a></li>
+  <li>
+    <a href="{{ recipe.url | relative_url }}" class="recipe-link">
+      {% if recipe.image %}
+      <img src="{{ recipe.image | relative_url }}" alt="{{ recipe.title }}" class="recipe-thumb">
+      {% else %}
+      <span class="recipe-thumb recipe-thumb-empty" aria-hidden="true"></span>
+      {% endif %}
+      <span class="recipe-title">{{ recipe.title }}</span>
+    </a>
+  </li>
   {% endfor %}
 </ul>

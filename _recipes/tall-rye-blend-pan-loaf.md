@@ -4,6 +4,7 @@ title: Tall Rye-Blend Pan Loaf
 categories: [recipes]
 date: 2025-12-27
 tags: [bread, baking, rye]
+image: /assets/images/photos/rye-pan-loaf.jpg
 layout: single
 toc: true
 author_profile: false
@@ -12,6 +13,8 @@ author_profile: false
 This is a tall, hearty rye-blend loaf with excellent rise and structure. The combination of vital wheat gluten and non-diastatic malt powder helps achieve a tall, strong loaf with good flavor. This is one of my favorites and go-to recipes, I make it at least once a week.
 
 I make this in an 8.5×4.5 USA Pan. The dough weight is approximately 830g with about 71% hydration.
+
+![Tall Rye-Blend Pan Loaf](/assets/images/photos/rye-pan-loaf.jpg)
 
 ## Ingredients
 

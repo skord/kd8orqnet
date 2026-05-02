@@ -9,7 +9,10 @@
       "Bash(env bash *)",
       "Bash(bash -n /Users/mike/Projects/kd8orqnet/bin/optimize-images.sh)",
       "Bash(command -v magick)",
-      "Bash(/Users/mike/Projects/kd8orqnet/bin/optimize-images.sh)"
+      "Bash(/Users/mike/Projects/kd8orqnet/bin/optimize-images.sh)",
+      "Bash(bundle exec *)",
+      "Bash(git -C /home/mike/Projects/kd8orqnet status)",
+      "Bash(git -C /home/mike/Projects/kd8orqnet add .claude/settings.local.json assets/images/photos/chipotle-adobo-sauce.jpg assets/images/photos/cornflowers.jpg)"
     ],
     "deny": []
   }
