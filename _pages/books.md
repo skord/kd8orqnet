@@ -4,4 +4,4 @@ title: Books
 layout: books
 permalink: /books/
 ---
-Virtual and Physical books of mine (some of them) as fetched from Goodreads. 
+Just a few of the virtual and physical books of mine as fetched from Goodreads. 
