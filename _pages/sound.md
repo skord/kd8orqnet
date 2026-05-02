@@ -1,6 +1,6 @@
 ---
 typora-root-url: ../
-title: Music
+title: Sound
 layout: page
-permalink: /music/
+permalink: /sound/
 ---
