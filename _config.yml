@@ -45,6 +45,9 @@ collections:
   recipes:
     output: true
     permalink: /:collection/:name/
+  books:
+    output: true
+    permalink: /books/:name/
 
 exclude:
   - "*.sublime-project"
@@ -105,3 +108,9 @@ defaults:
       type: recipes
     values:
       layout: page
+  # _books
+  - scope:
+      path: ""
+      type: books
+    values:
+      layout: book

@@ -1,0 +1,20 @@
+---
+title: 'The Internet Con: How To Seize the Means of Computation'
+author: Cory Doctorow
+goodreads_id: 195583719
+goodreads_url: https://www.goodreads.com/review/show/7564664234?utm_medium=api&utm_source=rss
+shelves:
+- to-read
+date_added: '2026-05-02'
+year_published: 2023
+average_rating: 4.23
+image: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1693887440l/195583719._SX318_.jpg
+description: |-
+  When the tech platforms promised a future of "connection," they were lying. They said their "walled gardens" would keep us safe, but those were prison walls.
+
+  The platforms locked us into their systems and made us easy pickings, ripe for extaction. Twitter, Facebook and other Big Tech platforms hard to leave by design. They hold hostage the people we love, the communities that matter to us, the audiences and customers we rely on. The impossibility of staying connected to these people after you delete your account has nothing to do with technological it's a business strategy in service to commodifying your personal life and relationships.
+
+  We can - we must - dismantle the tech platforms. In The Internet Con , Cory Doctorow explains how to seize the means of computation, by forcing Silicon Valley to do the thing it fears interoperate. Interoperability will tear down the walls between technologies, allowing users leave platforms, remix their media, and reconfigure their devices without corporate permission.
+
+  Interoperability is the only route to the rapid and enduring annihilation of the platforms. The Internet Con is the disassembly manual we need to take back our internet.
+---

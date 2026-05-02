@@ -1,0 +1,241 @@
+#!/usr/bin/env ruby
+# bin/sync-books — pull Goodreads RSS into the _books/ Jekyll collection.
+#
+# Reads _data/goodreads.yml for user_id (and optional key + shelf), fetches
+# the RSS feed, and writes one markdown file per book to _books/<slug>.md.
+# Frontmatter is regenerated from Goodreads on every run; the body (your
+# notes) is preserved verbatim. Books removed from Goodreads are left on
+# disk — delete those files by hand if you want them gone.
+#
+# Usage:
+#   bin/sync-books              # write changes
+#   bin/sync-books --dry-run    # show what would change
+#   bin/sync-books --verbose    # log every item, not just changes
+
+require 'net/http'
+require 'uri'
+require 'rexml/document'
+require 'yaml'
+require 'fileutils'
+require 'optparse'
+require 'time'
+
+ROOT = File.expand_path('..', __dir__)
+CONFIG_PATH = File.join(ROOT, '_data', 'goodreads.yml')
+BOOKS_DIR = File.join(ROOT, '_books')
+PER_PAGE = 100
+MAX_PAGES = 50
+USER_AGENT = 'kd8orqnet-sync-books/1.0'
+# Goodreads forces every book onto exactly one of these "exclusive" shelves.
+# user_shelves in the RSS only lists *custom* shelves, so to know whether a
+# book is read/reading/to-read we have to fetch each shelf separately and
+# stamp the shelf name on the book ourselves.
+DEFAULT_SHELVES = %w[read currently-reading to-read].freeze
+
+options = { dry_run: false, verbose: false }
+OptionParser.new do |o|
+  o.banner = 'Usage: bin/sync-books [--dry-run] [--verbose]'
+  o.on('-n', '--dry-run', 'Print what would change without writing files') { options[:dry_run] = true }
+  o.on('-v', '--verbose', 'Log every parsed item, not just changes') { options[:verbose] = true }
+  o.on('-h', '--help') { puts o; exit }
+end.parse!
+
+abort "missing #{CONFIG_PATH}" unless File.exist?(CONFIG_PATH)
+config = YAML.load_file(CONFIG_PATH) || {}
+user_id = config['user_id'].to_s.strip
+key = config['key'].to_s.strip
+extra_shelves = Array(config['extra_shelves']).map { |s| s.to_s.strip }.reject(&:empty?)
+abort 'goodreads.yml is missing user_id' if user_id.empty?
+
+# Always fetch the three default exclusive shelves plus any custom exclusive
+# shelves the user has configured (e.g. did-not-finish). Each shelf is
+# fetched separately so we can stamp the shelf name onto every book — the
+# RSS feed's user_shelves field only lists *non-exclusive* custom shelves.
+shelves_to_fetch = DEFAULT_SHELVES + (extra_shelves - DEFAULT_SHELVES)
+
+def fetch_with_redirects(uri, limit = 5)
+  raise 'too many redirects' if limit <= 0
+  req = Net::HTTP::Get.new(uri)
+  req['User-Agent'] = USER_AGENT
+  req['Accept'] = 'application/rss+xml, application/xml;q=0.9, */*;q=0.8'
+  res = Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https') { |h| h.request(req) }
+  case res
+  when Net::HTTPSuccess then res.body
+  when Net::HTTPRedirection then fetch_with_redirects(URI(res['location']), limit - 1)
+  else raise "HTTP #{res.code} fetching #{uri} — #{res.message}"
+  end
+end
+
+def fetch_page(user_id, key, shelf, page)
+  # sort=position bypasses Goodreads' stale RSS cache. The default sort
+  # returns a snapshot built periodically server-side (often days to weeks
+  # behind reality); sort=position rebuilds on request and reflects recent
+  # shelf moves. lastBuildDate proves it: default lags, position is current.
+  qs = { 'shelf' => shelf, 'per_page' => PER_PAGE.to_s, 'page' => page.to_s, 'sort' => 'position' }
+  qs['key'] = key unless key.empty?
+  url = "https://www.goodreads.com/review/list_rss/#{user_id}?" + qs.map { |k, v| "#{k}=#{v}" }.join('&')
+  fetch_with_redirects(URI(url))
+end
+
+def text_of(item, name)
+  el = item.elements[name]
+  return nil unless el
+  (el.text || '').strip
+end
+
+def parse_int(str)
+  return nil if str.nil? || str.to_s.strip.empty?
+  v = str.to_i
+  v.zero? ? nil : v
+end
+
+def parse_date(str)
+  return nil if str.nil? || str.to_s.strip.empty?
+  Time.parse(str).strftime('%Y-%m-%d')
+rescue ArgumentError
+  nil
+end
+
+ENTITY_MAP = { '&nbsp;' => ' ', '&amp;' => '&', '&lt;' => '<', '&gt;' => '>',
+               '&quot;' => '"', '&#39;' => "'", '&apos;' => "'" }.freeze
+
+def strip_html(html)
+  return '' if html.nil? || html.empty?
+  s = html.gsub(/<br\s*\/?>/i, "\n").gsub(/<\/p\s*>/i, "\n\n").gsub(/<[^>]+>/, '')
+  ENTITY_MAP.each { |k, v| s = s.gsub(k, v) }
+  s.gsub(/&#(\d+);/) { [Regexp.last_match(1).to_i].pack('U') }
+   .gsub(/[ \t]+/, ' ').gsub(/\n{3,}/, "\n\n").strip
+end
+
+def parse_shelves(str)
+  return [] if str.nil? || str.empty?
+  str.split(',').map(&:strip).reject(&:empty?)
+end
+
+def slugify(str)
+  s = str.to_s.downcase.gsub(/[^a-z0-9\s-]/, '')
+  s.gsub(/\s+/, '-').gsub(/-+/, '-').gsub(/\A-|-\z/, '')
+end
+
+def existing_body(path)
+  return '' unless File.exist?(path)
+  raw = File.read(path)
+  return raw unless raw.start_with?("---\n") || raw.start_with?("---\r\n")
+  parts = raw.split(/^---\s*$\n/, 3)
+  parts.length >= 3 ? parts[2] : ''
+end
+
+def build_frontmatter(item)
+  fm = {}
+  fm['title'] = text_of(item, 'title')
+  author = text_of(item, 'author_name')
+  fm['author'] = author unless author.nil? || author.empty?
+  gid = parse_int(text_of(item, 'book_id'))
+  fm['goodreads_id'] = gid if gid
+  link = text_of(item, 'link')
+  fm['goodreads_url'] = link unless link.nil? || link.empty?
+  isbn = text_of(item, 'isbn')
+  fm['isbn'] = isbn unless isbn.nil? || isbn.empty?
+  shelves = parse_shelves(text_of(item, 'user_shelves'))
+  fm['shelves'] = shelves unless shelves.empty?
+  rating = parse_int(text_of(item, 'user_rating'))
+  fm['rating'] = rating if rating && rating.positive?
+  da = parse_date(text_of(item, 'user_date_added'))
+  fm['date_added'] = da if da
+  dr = parse_date(text_of(item, 'user_read_at'))
+  fm['date_read'] = dr if dr
+  np = parse_int(text_of(item, 'num_pages'))
+  fm['num_pages'] = np if np
+  yp = parse_int(text_of(item, 'book_published'))
+  fm['year_published'] = yp if yp
+  ar = text_of(item, 'average_rating')
+  fm['average_rating'] = ar.to_f if ar && !ar.empty? && ar.to_f > 0
+  img = text_of(item, 'book_large_image_url')
+  img = text_of(item, 'book_image_url') if img.nil? || img.empty?
+  fm['image'] = img unless img.nil? || img.empty?
+  desc = strip_html(text_of(item, 'book_description'))
+  fm['description'] = desc unless desc.empty?
+  fm
+end
+
+def render(frontmatter, body)
+  yaml = frontmatter.to_yaml(line_width: -1)
+  yaml = "---\n" + yaml.sub(/\A---\s*\n/, '')
+  body = body.to_s.sub(/\A\s*\n+/, '').sub(/\s+\z/, '')
+  body.empty? ? "#{yaml}---\n" : "#{yaml}---\n\n#{body}\n"
+end
+
+FileUtils.mkdir_p(BOOKS_DIR)
+counts = Hash.new(0)
+
+# Pass 1: fetch every shelf, merge entries keyed by goodreads_id (or title
+# when an item somehow has no id). The shelf we just fetched is appended to
+# the book's shelves list.
+books_by_key = {}
+shelves_to_fetch.each do |sh|
+  (1..MAX_PAGES).each do |page|
+    body = fetch_page(user_id, key, sh, page)
+    items = REXML::Document.new(body).get_elements('rss/channel/item')
+    break if items.empty?
+    items.each do |item|
+      fm = build_frontmatter(item)
+      title = fm['title']
+      next if title.nil? || title.empty?
+      key_id = fm['goodreads_id'] || "title:#{title}"
+      existing = books_by_key[key_id]
+      shelves = ((existing && existing['shelves']) || []) | (fm['shelves'] || []) | [sh]
+      merged = existing ? existing.merge(fm) { |_, a, b| (b.nil? || (b.respond_to?(:empty?) && b.empty?)) ? a : b } : fm
+      merged['shelves'] = shelves
+      books_by_key[key_id] = merged
+    end
+    break if items.size < PER_PAGE
+  end
+end
+
+# Pass 2: render each merged book to disk.
+seen = {}
+books_by_key.each_value do |fm|
+  title = fm['title']
+  base = slugify(title)
+  suffix = fm['goodreads_id'] ? fm['goodreads_id'].to_s : nil
+  slug = if base.empty? && suffix then "book-#{suffix}"
+         elsif suffix then "#{base}-#{suffix}"
+         else base
+         end
+  path = File.join(BOOKS_DIR, "#{slug}.md")
+  if seen[path]
+    warn "duplicate slug #{slug}; skipping #{title}"
+    next
+  end
+  seen[path] = true
+
+  output = render(fm, existing_body(path))
+  prior = File.exist?(path) ? File.read(path) : nil
+  result = if prior == output then :unchanged
+           elsif options[:dry_run] then :dry
+           elsif prior then :updated
+           else :created
+           end
+  File.write(path, output) unless options[:dry_run] || result == :unchanged
+  counts[result] += 1
+  if options[:verbose] || %i[created updated dry].include?(result)
+    puts "#{result.to_s.ljust(9)} #{path}"
+  end
+end
+
+total = counts.values.sum
+puts "synced #{total} books — created:#{counts[:created]} updated:#{counts[:updated]} unchanged:#{counts[:unchanged]} dry:#{counts[:dry]}"
+
+synced_ids = books_by_key.values.map { |fm| fm['goodreads_id'] }.compact
+stale = []
+Dir.glob(File.join(BOOKS_DIR, '*.md')).sort.each do |path|
+  raw = File.read(path)
+  next unless raw =~ /^goodreads_id:\s*(\d+)/
+  id = Regexp.last_match(1).to_i
+  stale << path unless synced_ids.include?(id)
+end
+unless stale.empty?
+  puts ''
+  puts "#{stale.size} on disk no longer in Goodreads (left untouched — delete by hand if you want them gone):"
+  stale.each { |p| puts "  #{p.sub(ROOT + '/', '')}" }
+end

@@ -1,0 +1,64 @@
+---
+layout: default
+---
+
+<div class="page-content">
+  {{ content }}
+</div>
+
+{% assign shelf_order = "currently-reading,read,to-read" | split: "," %}
+{% assign all_shelves = "" | split: "" %}
+{% for book in site.books %}
+  {% if book.shelves %}
+    {% for s in book.shelves %}
+      {% unless all_shelves contains s %}{% assign all_shelves = all_shelves | push: s %}{% endunless %}
+    {% endfor %}
+  {% else %}
+    {% unless all_shelves contains "unshelved" %}{% assign all_shelves = all_shelves | push: "unshelved" %}{% endunless %}
+  {% endif %}
+{% endfor %}
+{% assign extras = "" | split: "" %}
+{% for s in all_shelves %}
+  {% unless shelf_order contains s %}{% assign extras = extras | push: s %}{% endunless %}
+{% endfor %}
+{% assign extras = extras | sort %}
+{% assign render_order = shelf_order | concat: extras %}
+
+{% for shelf in render_order %}
+  {% assign in_shelf = "" | split: "" %}
+  {% for book in site.books %}
+    {% if shelf == "unshelved" and book.shelves == nil %}
+      {% assign in_shelf = in_shelf | push: book %}
+    {% elsif book.shelves contains shelf %}
+      {% assign in_shelf = in_shelf | push: book %}
+    {% endif %}
+  {% endfor %}
+  {% if in_shelf.size > 0 %}
+    {% if shelf == "read" %}
+      {% assign in_shelf = in_shelf | sort: "date_read" | reverse %}
+    {% else %}
+      {% assign in_shelf = in_shelf | sort: "date_added" | reverse %}
+    {% endif %}
+    <section class="book-shelf">
+      <h2 class="book-shelf-heading">
+        <span>{{ shelf | replace: "-", " " }}</span>
+        <span class="book-shelf-count">{{ in_shelf.size }}</span>
+      </h2>
+      <ul class="book-grid">
+        {% for book in in_shelf %}
+          <li>
+            <a href="{{ book.url | relative_url }}" class="book-card">
+              {% if book.image %}
+                <img src="{{ book.image }}" alt="{{ book.title | escape }}" class="book-cover" loading="lazy">
+              {% else %}
+                <span class="book-cover book-cover-empty" aria-hidden="true">{{ book.title }}</span>
+              {% endif %}
+              <span class="book-card-title">{{ book.title }}</span>
+              {% if book.author %}<span class="book-card-author">{{ book.author }}</span>{% endif %}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
+{% endfor %}

@@ -1,0 +1,13 @@
+# Goodreads RSS sync config consumed by bin/sync-books.
+# user_id:       numeric ID from your profile URL (.../user/show/<ID>-<slug>)
+# key:           optional RSS key, only required for non-public shelves.
+#                Grab it from the RSS link on any of your shelves; it's
+#                the `key` query param.
+# extra_shelves: custom exclusive shelves to fetch in addition to the three
+#                defaults (read / currently-reading / to-read). Use the
+#                shelf's URL slug — Goodreads silently falls back to the
+#                full library if the slug doesn't exist, so typos go quiet.
+user_id: "68331236"
+key: ""
+extra_shelves:
+  - did-not-finish

@@ -1,0 +1,57 @@
+---
+layout: default
+---
+
+<article class="book-single">
+  <header class="book-single-header">
+    {% if page.image %}
+      <img src="{{ page.image }}" alt="{{ page.title | escape }}" class="book-single-cover">
+    {% else %}
+      <span class="book-single-cover book-cover-empty" aria-hidden="true">{{ page.title }}</span>
+    {% endif %}
+
+    <div class="book-single-meta">
+      <h1 class="book-single-title">{{ page.title }}</h1>
+      {% if page.author %}<p class="book-single-author">{{ page.author }}</p>{% endif %}
+
+      <dl class="book-facts">
+        {% if page.shelves %}
+          <dt>Shelves</dt>
+          <dd>{{ page.shelves | join: ", " | replace: "-", " " }}</dd>
+        {% endif %}
+        {% if page.rating %}
+          <dt>Rating</dt>
+          <dd>
+            <span class="book-rating" aria-label="{{ page.rating }} out of 5">
+              {% assign filled = page.rating %}
+              {% assign unfilled = 5 | minus: filled %}
+              {% if filled > 0 %}{% for i in (1..filled) %}<span class="star-filled">★</span>{% endfor %}{% endif %}
+              {% if unfilled > 0 %}{% for i in (1..unfilled) %}<span class="star-empty">☆</span>{% endfor %}{% endif %}
+            </span>
+          </dd>
+        {% endif %}
+        {% if page.date_read %}<dt>Read</dt><dd>{{ page.date_read | date: "%b %Y" }}</dd>{% endif %}
+        {% if page.date_added %}<dt>Added</dt><dd>{{ page.date_added | date: "%b %Y" }}</dd>{% endif %}
+        {% if page.year_published %}<dt>Published</dt><dd>{{ page.year_published }}</dd>{% endif %}
+        {% if page.num_pages %}<dt>Pages</dt><dd>{{ page.num_pages }}</dd>{% endif %}
+        {% if page.isbn %}<dt>ISBN</dt><dd>{{ page.isbn }}</dd>{% endif %}
+        {% if page.average_rating %}<dt>GR avg</dt><dd>{{ page.average_rating }}</dd>{% endif %}
+        {% if page.goodreads_url %}<dt>Goodreads</dt><dd><a href="{{ page.goodreads_url }}">view</a></dd>{% endif %}
+      </dl>
+    </div>
+  </header>
+
+  {% assign trimmed = content | strip %}
+  {% if trimmed != "" %}
+    <section class="book-notes">
+      {{ content }}
+    </section>
+  {% endif %}
+
+  {% if page.description %}
+    <section class="book-description">
+      <h2>From the publisher</h2>
+      <p>{{ page.description | newline_to_br }}</p>
+    </section>
+  {% endif %}
+</article>
