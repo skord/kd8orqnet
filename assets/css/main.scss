@@ -85,6 +85,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .post-meta .post-title {
+  font-family: 'Lora', serif;
   font-size: 1.75rem;
   font-weight: 700;
   line-height: 1.25;
@@ -112,6 +113,7 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 1.25rem;
   display: block;
 }
+
 
 .post-excerpt {
   font-family: 'Lora', serif;
@@ -190,6 +192,7 @@ a { color: inherit; text-decoration: none; }
   }
 
   h1.post-title {
+    font-family: 'Lora', serif;
     font-size: 2rem;
     font-weight: 700;
     line-height: 1.25;
@@ -204,6 +207,22 @@ a { color: inherit; text-decoration: none; }
 
   .post-hero {
     margin-bottom: 2.5rem;
+  }
+
+  .post-hero-figure {
+    margin: 0 0 2.5rem 0;
+
+    .post-hero {
+      margin: 0;
+    }
+
+    figcaption {
+      margin-top: 0.5rem;
+      font-family: 'Lora', serif;
+      font-size: 0.875rem;
+      color: var(--text-sec);
+      font-style: italic;
+    }
   }
 
   .post-content {
@@ -335,15 +354,16 @@ a { color: inherit; text-decoration: none; }
 
 // --- Page content ---
 
-.page-content {
-  .page-title {
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    margin-bottom: 2rem;
-    line-height: 1.25;
-  }
+.page-title {
+  font-family: 'Lora', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 2rem;
+  line-height: 1.25;
+}
 
+.page-content {
   font-family: 'Lora', serif;
   font-size: 1.05rem;
   line-height: 1.85;
@@ -527,5 +547,5 @@ a { color: inherit; text-decoration: none; }
   .post-meta .post-title { font-size: 1.4rem; }
 
   .post-single h1.post-title { font-size: 1.6rem; }
-  .page-content .page-title { font-size: 1.6rem; }
+  .page-title { font-size: 1.6rem; }
 }

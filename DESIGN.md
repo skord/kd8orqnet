@@ -28,13 +28,14 @@ For main CTAs, do not use flat fills. Apply a subtle linear gradient from `prima
 ---
 
 ### 3. Typography: The Editorial Voice
-We use **Inter** not as a system font, but as a modernist tool. The hierarchy is extreme to create a rhythmic, editorial feel.
+We pair **Lora** (serif) with **Inter** (sans) to create a rhythmic, editorial feel — the serif carries the editorial voice while the sans handles the framing chrome.
 
-*   **Display (The Statement):** `display-lg` (3.5rem) should be used for section headers, often placed asymmetrically to create tension.
-*   **Body (The Narrative):** `body-lg` (1rem) with a generous line-height. This is the "artifact" description.
-*   **Label (The Metadata):** `label-md` (0.75rem) in all-caps with 0.05em letter spacing. Use this for category tags or technical data to mimic the small placards found in museums.
+*   **Display & Titles (The Statement):** Lora serif for page titles, post titles (both in listings and the single-post `<h1>`), and hero captions. The serif gives titles weight and intent without shouting.
+*   **Body (The Narrative):** Lora serif at `body-lg` (1.05rem) with a generous line-height for post bodies, page content, and excerpts. This is the "artifact" description.
+*   **Chrome (The Frame):** Inter sans for site name, navigation, dates, labels, pagination, and footer. These are the museum placards and signage — they orient the reader without competing with the work.
+*   **Label (The Metadata):** `label-md` (0.75rem) in all-caps with 0.05em letter spacing for category tags or technical data, mimicking the small placards found in museums.
 
-The relationship between `display-sm` (2.25rem) and `label-md` creates a "high-low" contrast that feels premium and authoritative.
+The relationship between Lora titles and Inter labels creates a "high-low" contrast that feels premium and authoritative.
 
 ---
 

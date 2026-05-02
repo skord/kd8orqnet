@@ -8,7 +8,10 @@ layout: default
     <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %b '%y" }}</time>
   </header>
   {% if page.image %}
-  <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="post-hero">
+  <figure class="post-hero-figure">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="post-hero">
+    {% if page.caption %}<figcaption>{{ page.caption }}</figcaption>{% endif %}
+  </figure>
   {% endif %}
   <div class="post-content">
     {{ content }}

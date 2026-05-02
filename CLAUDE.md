@@ -19,8 +19,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is a Jekyll static site with a custom theme (no gem-based theme), deployed on DigitalOcean App Platform.
 
 **Typography:**
-- Inter (Google Fonts) for all UI elements: site name, navigation, post titles, dates, labels, pagination, footer
-- Lora (Google Fonts, serif) for reading text: post body content, excerpts, page content
+- Inter (Google Fonts) for UI elements: site name, navigation, dates, labels, pagination, footer
+- Lora (Google Fonts, serif) for titles and reading text: page titles, post titles (both listings and single-post `<h1>`), post body content, excerpts, page content, hero captions
 
 **Layout:**
 - Single column, max-width 720px, centered. No sidebar.
