@@ -5,7 +5,7 @@ goodreads_id: 6057292
 goodreads_url: https://www.goodreads.com/review/show/7567511592?utm_medium=api&utm_source=rss
 isbn: '1101208597'
 shelves:
-- to-read
+- did-not-finish
 date_added: '2026-05-02'
 year_published: 2006
 average_rating: 4.05

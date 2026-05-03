@@ -5,7 +5,7 @@ goodreads_id: 41453114
 goodreads_url: https://www.goodreads.com/review/show/7721226204?utm_medium=api&utm_source=rss
 isbn: '1534403000'
 shelves:
-- to-read
+- did-not-finish
 date_added: '2026-05-02'
 year_published: 2019
 average_rating: 4.04

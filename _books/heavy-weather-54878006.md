@@ -4,7 +4,7 @@ author: Bruce Sterling
 goodreads_id: 54878006
 goodreads_url: https://www.goodreads.com/review/show/7602518042?utm_medium=api&utm_source=rss
 shelves:
-- currently-reading
+- did-not-finish
 date_added: '2026-05-02'
 year_published: 1994
 average_rating: 3.81
