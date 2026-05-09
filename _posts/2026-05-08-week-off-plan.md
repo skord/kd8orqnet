@@ -20,3 +20,7 @@ Taking a week off work, bookended by weekends, so nine days. Here's the plan:
 * Go take some pictures somewhere
 * Run 10K. I'm only doing about 6 now on runs
 * Try a new grocery store
+
+Additions:
+* Dayton Hamvention
+* Visit Family
