@@ -27,7 +27,11 @@
       "Bash(curl -s -A \"Mozilla/5.0\" \"https://www.goodreads.com/review/list/68331236?shelf=currently-reading&per_page=100\")",
       "Bash(curl -s -A \"Mozilla/5.0 \\(X11; Linux x86_64\\) AppleWebKit/537.36\" \"https://www.goodreads.com/review/list/68331236?shelf=currently-reading&per_page=100\" -o /tmp/gr.html)",
       "Read(//tmp/**)",
-      "Bash(curl -s -A \"kd8orqnet-sync-books/1.0\" \"https://www.goodreads.com/review/list_rss/68331236?shelf=currently-reading&per_page=100&sort=position\")"
+      "Bash(curl -s -A \"kd8orqnet-sync-books/1.0\" \"https://www.goodreads.com/review/list_rss/68331236?shelf=currently-reading&per_page=100&sort=position\")",
+      "Bash(mise current *)",
+      "Bash(mise ls *)",
+      "Bash(ruby --version)",
+      "Bash(bundle --version)"
     ],
     "deny": []
   }
