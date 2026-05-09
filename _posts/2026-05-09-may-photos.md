@@ -7,9 +7,6 @@ gallery:
   - src: https://photos.mikedanko.me/galleries/may-photos/IMG_6468.jpeg
     thumb: https://photos.mikedanko.me/galleries/may-photos/thumbs/IMG_6468.jpeg
     caption: "Black Locust"
-  - src: https://photos.mikedanko.me/galleries/may-photos/IMG_6469.jpeg
-    thumb: https://photos.mikedanko.me/galleries/may-photos/thumbs/IMG_6469.jpeg
-    caption: "Black Locust"
   - src: https://photos.mikedanko.me/galleries/may-photos/IMG_6471.jpeg
     thumb: https://photos.mikedanko.me/galleries/may-photos/thumbs/IMG_6471.jpeg
     caption: "Black Locust"
