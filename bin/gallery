@@ -1,0 +1,135 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+R2_REMOTE="${R2_REMOTE:-mikedanko-photos:mikedanko-photos}"
+PUBLIC_BASE="${PUBLIC_BASE:-https://photos.mikedanko.me}"
+THUMB_WIDTH="${THUMB_WIDTH:-1200}"
+
+if command -v magick >/dev/null 2>&1; then
+  IM=(magick)
+elif command -v convert >/dev/null 2>&1; then
+  IM=(convert)
+else
+  echo "ImageMagick not found (need 'magick' or 'convert' on PATH)" >&2
+  exit 1
+fi
+
+command -v rclone >/dev/null 2>&1 || { echo "rclone not found on PATH" >&2; exit 1; }
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT"
+
+usage() {
+  cat <<EOF
+usage:
+  bin/gallery new <slug>      scaffold a draft post + photo staging dir
+  bin/gallery publish <slug>  upload photos to R2 and build the post
+
+env overrides:
+  R2_REMOTE     rclone remote + bucket  (default: $R2_REMOTE)
+  PUBLIC_BASE   public photo URL base   (default: $PUBLIC_BASE)
+  THUMB_WIDTH   thumbnail max dimension (default: $THUMB_WIDTH)
+EOF
+}
+
+cmd_new() {
+  local slug="${1:-}"
+  [[ -n "$slug" ]] || { usage; exit 1; }
+  local draft="_drafts/$slug.md"
+  local dir="_drafts/galleries/$slug"
+  [[ ! -e "$draft" ]] || { echo "$draft already exists" >&2; exit 1; }
+  [[ ! -e "$dir"   ]] || { echo "$dir already exists"   >&2; exit 1; }
+
+  mkdir -p "$dir"
+  touch "$dir/.keep"
+
+  local today_long
+  today_long=$(date '+%Y-%m-%d %H:%M %z')
+
+  cat > "$draft" <<EOF
+---
+typora-root-url: ../
+title: "TITLE HERE"
+date: $today_long
+categories: [photos]
+---
+
+Write the post here.
+EOF
+
+  echo "Created:"
+  echo "  $draft           (edit title and body)"
+  echo "  $dir/            (drop photos here)"
+  echo
+  echo "When ready: bin/gallery publish $slug"
+}
+
+cmd_publish() {
+  local slug="${1:-}"
+  [[ -n "$slug" ]] || { usage; exit 1; }
+  local draft="_drafts/$slug.md"
+  local dir="_drafts/galleries/$slug"
+  [[ -f "$draft" ]] || { echo "missing $draft (run: bin/gallery new $slug)" >&2; exit 1; }
+  [[ -d "$dir"   ]] || { echo "missing $dir" >&2; exit 1; }
+
+  shopt -s nullglob nocaseglob
+  local imgs=("$dir"/*.{jpg,jpeg,png})
+  shopt -u nocaseglob nullglob
+  [[ ${#imgs[@]} -gt 0 ]] || { echo "no images in $dir" >&2; exit 1; }
+
+  mkdir -p "$dir/.thumbs"
+  for img in "${imgs[@]}"; do
+    local name; name=$(basename "$img")
+    local thumb="$dir/.thumbs/$name"
+    if [[ ! -f "$thumb" ]]; then
+      echo "thumb: $name"
+      "${IM[@]}" "$img" -auto-orient -resize "${THUMB_WIDTH}x${THUMB_WIDTH}>" -strip -quality 82 "$thumb"
+    fi
+  done
+
+  echo "uploading originals to $R2_REMOTE/galleries/$slug ..."
+  rclone copy "$dir" "$R2_REMOTE/galleries/$slug" \
+    --s3-no-check-bucket \
+    --exclude '.thumbs/**' --exclude '.keep' --ignore-case
+  echo "uploading thumbs to $R2_REMOTE/galleries/$slug/thumbs ..."
+  rclone copy "$dir/.thumbs" "$R2_REMOTE/galleries/$slug/thumbs" \
+    --s3-no-check-bucket --ignore-case
+
+  local today; today=$(date +%F)
+  local out="_posts/$today-$slug.md"
+  if [[ -f "$out" ]]; then
+    mv "$out" "$out.bak"
+    echo "(backed up existing $out -> $out.bak)"
+  fi
+
+  awk -v slug="$slug" -v base="$PUBLIC_BASE" -v dir="$dir" '
+    BEGIN { state = "pre" }
+    state == "pre" && /^---$/ { state = "fm"; print; next }
+    state == "fm"  && /^---$/ {
+      print "gallery:"
+      cmd = "ls -1 \"" dir "\" 2>/dev/null | grep -iE \"\\.(jpg|jpeg|png)$\" | sort"
+      while ((cmd | getline name) > 0) {
+        printf("  - src: %s/galleries/%s/%s\n",         base, slug, name)
+        printf("    thumb: %s/galleries/%s/thumbs/%s\n", base, slug, name)
+        printf("    caption: \"\"\n")
+      }
+      close(cmd)
+      state = "body"
+      print
+      next
+    }
+    { print }
+  ' "$draft" > "$out"
+
+  rm "$draft"
+  echo
+  echo "Wrote $out"
+  echo "Review, fill in captions, then commit."
+}
+
+case "${1:-}" in
+  new)               shift; cmd_new "$@" ;;
+  publish)           shift; cmd_publish "$@" ;;
+  -h|--help|help|"") usage ;;
+  *)                 usage; exit 1 ;;
+esac

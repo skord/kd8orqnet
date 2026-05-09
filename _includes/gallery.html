@@ -1,0 +1,13 @@
+{% if page.gallery and page.gallery.size > 0 %}
+<div class="gallery" data-gallery>
+  {% for photo in page.gallery %}
+  <a href="{{ photo.src }}"
+     class="gallery-item"
+     {% if photo.caption and photo.caption != "" %}data-sub-html="{{ photo.caption | escape }}"{% endif %}>
+    <img src="{{ photo.thumb }}"
+         alt="{{ photo.caption | default: photo.alt | default: '' }}"
+         loading="lazy" />
+  </a>
+  {% endfor %}
+</div>
+{% endif %}

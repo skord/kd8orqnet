@@ -9,6 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  {% if page.gallery %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2/css/lightgallery-bundle.min.css">
+  {% endif %}
   {% feed_meta %}
   <link rel="canonical" href="{{ page.url | absolute_url }}">
 </head>
@@ -19,5 +22,13 @@
     {{ content }}
     {% include footer.html %}
   </div>
+  {% if page.gallery %}
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2/lightgallery.umd.min.js"></script>
+  <script>
+    document.querySelectorAll('[data-gallery]').forEach(function(el) {
+      lightGallery(el, { selector: 'a.gallery-item', download: false, counter: false });
+    });
+  </script>
+  {% endif %}
 </body>
 </html>
