@@ -15,6 +15,10 @@ layout: default
     <a href="{{ post.url | relative_url }}">
       <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="post-hero">
     </a>
+    {% elsif post.gallery and post.gallery.size > 0 %}
+    <a href="{{ post.url | relative_url }}">
+      <img src="{{ post.gallery[0].thumb }}" alt="{{ post.title }}" class="post-hero">
+    </a>
     {% endif %}
     <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</p>
     <a href="{{ post.url | relative_url }}" class="read-more">Read more &rarr;</a>
