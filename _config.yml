@@ -52,6 +52,7 @@ collections:
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
+  - _drafts/galleries/
   - vendor/
   - vendor/bundle/
   - .vendor/
