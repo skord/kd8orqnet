@@ -7,7 +7,7 @@ rating: 4
 date_added: '2026-05-02'
 date_read: '2026-05-02'
 year_published: 2006
-average_rating: 3.93
+average_rating: 3.94
 image: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1711875356l/210575221._SY475_.jpg
 description: |-
   Alternate cover edition can be found here

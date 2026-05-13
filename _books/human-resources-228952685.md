@@ -8,7 +8,7 @@ rating: 4
 date_added: '2026-05-03'
 date_read: '2026-05-03'
 year_published: 2025
-average_rating: 4.04
+average_rating: 4.03
 image: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1741835326l/228952685._SY475_.jpg
 description: |-
   Set years before Service Model, Adrian Tchaikovsky’s all-too plausible short story navigates a world where humans are increasingly redundant.
