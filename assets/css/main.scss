@@ -770,6 +770,88 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
+// --- Bicycles page ---
+
+.bike-specs {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.45rem 1.25rem;
+  margin: 0 0 2rem;
+  font-family: 'Inter', sans-serif;
+
+  dt {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    align-self: baseline;
+    padding-top: 0.2rem;
+  }
+
+  dd {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text);
+  }
+}
+
+.bike-storage {
+  margin: 0 0 2rem;
+
+  .storage-item {
+    display: grid;
+    grid-template-columns: 9rem 1fr;
+    gap: 0.35rem 1.25rem;
+    margin-bottom: 1.6rem;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .storage-role {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    padding-top: 0.25rem;
+    line-height: 1.4;
+  }
+
+  .storage-product {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text);
+  }
+
+  .storage-attrs {
+    list-style: none;
+    margin: 0.4rem 0 0;
+    padding: 0;
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: var(--text-sec);
+
+    li {
+      margin: 0;
+      padding: 0;
+    }
+
+    .attr-label {
+      color: var(--text-dim);
+      letter-spacing: 0.03em;
+      margin-right: 0.4rem;
+    }
+  }
+
+  @media (max-width: 550px) {
+    .storage-item {
+      grid-template-columns: 1fr;
+      gap: 0.15rem;
+    }
+  }
+}
+
 // --- 404 ---
 
 .error-404 {
