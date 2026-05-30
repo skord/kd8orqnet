@@ -8,8 +8,6 @@ layout: single
 toc: true
 author_profile: false
 ---
-# Garlic Scape Pesto
-
 Freezer-friendly, no basil required. The scapes bring all the garlicky punch. Freeze in ice cube trays for year-round use.
 
 Makes about 8 servings (one batch). Multiply 2-3x to use up four large market bunches.
