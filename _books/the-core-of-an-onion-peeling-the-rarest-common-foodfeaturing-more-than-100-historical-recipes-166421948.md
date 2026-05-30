@@ -7,7 +7,7 @@ isbn: 163557594X
 date_added: '2025-04-21'
 date_read: '2025-04-21'
 year_published: 2023
-average_rating: 3.53
+average_rating: 3.54
 image: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1696128460l/166421948._SY475_.jpg
 description: |-
   From the New York Times- bestselling author of Cod and Salt , a delectable look at the cultural, historical, and gastronomical layers of one of the world's most beloved culinary staples - featuring original illustrations and recipes from around the world.

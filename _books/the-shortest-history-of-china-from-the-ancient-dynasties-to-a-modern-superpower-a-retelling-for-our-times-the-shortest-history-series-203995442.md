@@ -4,10 +4,11 @@ author: Linda Jaivin
 goodreads_id: 203995442
 goodreads_url: https://www.goodreads.com/review/show/7567436705?utm_medium=api&utm_source=rss
 shelves:
-- currently-reading
-date_added: '2025-05-13'
+- did-not-finish
+rating: 2
+date_added: '2026-05-28'
 year_published: 2021
-average_rating: 4.12
+average_rating: 4.07
 image: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1702920990l/203995442._SY475_.jpg
 description: |-
   Journey across epic China—through millennia of early innovation to modern dominance. The Shortest History books deliver thousands of years of history in one riveting, fast-paced read.
