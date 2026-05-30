@@ -4,7 +4,8 @@ author: Jonathan David Whitcomb
 goodreads_id: 13126450
 goodreads_url: https://www.goodreads.com/review/show/8569354533?utm_medium=api&utm_source=rss
 isbn: '1466292113'
-date_added: '2026-05-02'
+rating: 4
+date_added: '2026-05-30'
 year_published: 2009
 average_rating: 4.0
 image: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347675147l/13126450.jpg
