@@ -1,1 +1,1 @@
-This is the jekyll blog of Mike Danko. It uses the minimal mistakes theme. 
+This is the Jekyll blog of Mike Danko.
