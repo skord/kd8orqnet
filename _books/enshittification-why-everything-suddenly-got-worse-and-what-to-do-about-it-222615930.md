@@ -7,7 +7,7 @@ rating: 4
 date_added: '2026-05-28'
 date_read: '2026-05-28'
 year_published: 2025
-average_rating: 4.16
+average_rating: 4.17
 image: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1744082049l/222615930._SY475_.jpg
 description: |-
   Enshittification: It’s not just you―the internet sucks now. It’s been enshittified. That was no accident, and it’s not gonna fix itself. Here’s how we’ll disenshittify it so we can have a new, good internet.

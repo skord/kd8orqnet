@@ -7,7 +7,7 @@ isbn: '0393285480'
 date_added: '2026-05-02'
 date_read: '2026-05-02'
 year_published: 2016
-average_rating: 3.99
+average_rating: 4.0
 image: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1448260291l/27881041._SY475_.jpg
 description: |-
   From the New York Times best-selling author of Cod and Salt, a definitive history of paper and the astonishing ways it has shaped today’s world.
