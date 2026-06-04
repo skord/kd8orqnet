@@ -4,8 +4,8 @@ author: Leinad Zeraus
 goodreads_id: 59028312
 goodreads_url: https://www.goodreads.com/review/show/8644377667?utm_medium=api&utm_source=rss
 shelves:
-- currently-reading
-date_added: '2026-05-30'
+- did-not-finish
+date_added: '2026-06-03'
 year_published: 2006
 average_rating: 4.23
 image: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1632092686l/59028312._SY475_.jpg
