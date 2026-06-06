@@ -1,6 +1,6 @@
 ---
 typora-root-url: ../
-title: "Site Updates: May 2026"
+title: "Updates: May 2026"
 date: 2026-05-01 12:00 -0400
 categories: [general, updates]
 image: /assets/images/photos/cornflowers.jpg
