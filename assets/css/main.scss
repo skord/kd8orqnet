@@ -494,49 +494,48 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
-// --- Recipe list ---
+// --- Recipe grid ---
 
-.recipe-list {
+.recipe-grid {
   list-style: none;
   padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.75rem 1.1rem;
 
-  li {
-    margin-bottom: 1.25rem;
-  }
-
-  .recipe-link {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    text-decoration: none;
-  }
-
-  .recipe-thumb {
-    flex-shrink: 0;
-    display: block;
-    width: 72px;
-    height: 72px;
-    object-fit: cover;
-    border-radius: 4px;
-    background: var(--bg-alt, #f2f0ec);
-  }
-
-  .recipe-title {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.05rem;
-    font-weight: 500;
-    color: var(--text);
-    text-decoration: underline;
-    text-decoration-color: var(--text-dim);
-    text-underline-offset: 3px;
-    text-decoration-thickness: 1px;
-    transition: color 0.15s, text-decoration-color 0.15s;
-  }
-  .recipe-link:hover .recipe-title {
-    color: var(--primary);
-    text-decoration-color: var(--primary);
-  }
+  li { margin: 0; }
 }
+
+.recipe-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.recipe-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 4px;
+  background: #f2f0ec;
+  margin-bottom: 0.55rem;
+  transition: transform 0.18s ease;
+}
+
+.recipe-card:hover .recipe-photo { transform: translateY(-2px); }
+
+.recipe-card-title {
+  display: block;
+  font-family: 'Lora', serif;
+  font-size: 0.92rem;
+  line-height: 1.3;
+  color: var(--text);
+  transition: color 0.15s;
+}
+
+.recipe-card:hover .recipe-card-title { color: var(--primary); }
 
 // --- Books ---
 
@@ -964,6 +963,11 @@ blockquote.callout {
 
   .book-grid {
     grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+    gap: 1.5rem 0.9rem;
+  }
+
+  .recipe-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 1.5rem 0.9rem;
   }
 }
