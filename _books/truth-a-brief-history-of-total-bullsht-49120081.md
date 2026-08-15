@@ -8,7 +8,7 @@ shelves:
 - to-read
 date_added: '2025-05-27'
 year_published: 2019
-average_rating: 4.03
+average_rating: 4.05
 image: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1677764296l/49120081._SY475_.jpg
 description: |-
   We live in a “post-truth” world, we’re told. But was there ever really a golden age of truth-telling? Or have people been lying, fibbing and just plain bullsh*tting since the beginning of time?

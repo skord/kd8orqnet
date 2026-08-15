@@ -8,7 +8,7 @@ rating: 5
 date_added: '2025-05-27'
 date_read: '2025-05-27'
 year_published: 2018
-average_rating: 4.09
+average_rating: 4.08
 image: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1521289991l/39304802._SY475_.jpg
 description: |-
   A New York Times Notable Book The inspiration for PBS's AMERICAN EXPERIENCE film The Poison Squad.From Pulitzer Prize winner and New York Times-bestselling author Deborah Blum, the dramatic true story of how food was made safe in the United States and the heroes, led by the inimitable Dr. Harvey Washington Wiley, who fought for change

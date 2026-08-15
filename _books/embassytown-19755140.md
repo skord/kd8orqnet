@@ -7,7 +7,7 @@ shelves:
 - to-read
 date_added: '2026-05-02'
 year_published: 2011
-average_rating: 4.01
+average_rating: 4.0
 image: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1387753838l/19755140.jpg
 description: |-
   NEW YORK TIMES BESTSELLER

@@ -7,7 +7,7 @@ isbn: '0374157359'
 rating: 5
 date_added: '2026-05-19'
 year_published: 2021
-average_rating: 4.2
+average_rating: 4.19
 image: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1717101866l/56269264._SY475_.jpg
 description: |-
   A dramatically new understanding of human history, challenging our most fundamental assumptions about social evolution—from the development of agriculture and cities to the origins of the state, democracy, and inequality—and revealing new possibilities for human emancipation.

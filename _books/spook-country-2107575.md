@@ -6,7 +6,7 @@ goodreads_url: https://www.goodreads.com/review/show/8569367745?utm_medium=api&u
 isbn: '0425221415'
 date_added: '2026-05-02'
 year_published: 2007
-average_rating: 3.55
+average_rating: 3.56
 image: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1439878208l/2107575._SY475_.jpg
 description: |-
   The "cool and scary"(San Francisco Chronicle) New York Times bestseller from the author of Pattern Recognition and Neuromancer.

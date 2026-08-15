@@ -5,7 +5,7 @@ goodreads_id: 138329465
 goodreads_url: https://www.goodreads.com/review/show/8569371629?utm_medium=api&utm_source=rss
 date_added: '2026-05-02'
 year_published: 2008
-average_rating: 4.0
+average_rating: 4.1
 image: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1697728262l/138329465._SY475_.jpg
 description: |-
   A fascinating exploration of the science of the impossible—from death rays and force fields to invisibility cloaks—revealing to what extent such technologies might be achievable decades or millennia into the future.

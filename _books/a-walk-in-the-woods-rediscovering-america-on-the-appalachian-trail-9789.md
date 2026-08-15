@@ -1,6 +1,6 @@
 ---
 title: 'A Walk in the Woods: Rediscovering America on the Appalachian Trail'
-author: Bill Bryson
+author: Bill  Bryson
 goodreads_id: 9789
 goodreads_url: https://www.goodreads.com/review/show/8573201679?utm_medium=api&utm_source=rss
 isbn: '0767902521'

@@ -7,7 +7,7 @@ shelves:
 - to-read
 date_added: '2017-06-04'
 year_published: 2002
-average_rating: 4.07
+average_rating: 4.09
 image: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1394230222l/11301218.jpg
 description: |-
   Clear, insightful, and nondogmatic, this book gives us a new appreciation for one of our most ubiquitous institutions.

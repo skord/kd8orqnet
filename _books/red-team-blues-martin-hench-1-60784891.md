@@ -6,7 +6,7 @@ goodreads_url: https://www.goodreads.com/review/show/7599072579?utm_medium=api&u
 isbn: '1250865867'
 date_added: '2025-05-25'
 year_published: 2023
-average_rating: 4.17
+average_rating: 4.16
 image: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1667870448l/60784891._SX318_.jpg
 description: |-
   New York Times bestseller Cory Doctorow's Red Team Blues is a grabby next-Tuesday thriller about cryptocurrency shenanigans that will awaken you to how the world really works.

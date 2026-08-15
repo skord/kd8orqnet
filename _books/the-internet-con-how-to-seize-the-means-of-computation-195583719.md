@@ -7,7 +7,7 @@ shelves:
 - to-read
 date_added: '2026-05-02'
 year_published: 2023
-average_rating: 4.23
+average_rating: 4.24
 image: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1693887440l/195583719._SX318_.jpg
 description: |-
   When the tech platforms promised a future of "connection," they were lying. They said their "walled gardens" would keep us safe, but those were prison walls.

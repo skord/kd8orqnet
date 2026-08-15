@@ -6,7 +6,7 @@ goodreads_url: https://www.goodreads.com/review/show/8569367321?utm_medium=api&u
 isbn: '0425240770'
 date_added: '2026-05-02'
 year_published: 2010
-average_rating: 3.78
+average_rating: 3.79
 image: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1758704895l/9712453._SY475_.jpg
 description: |-
   Hollis Henry worked for the global marketing magnate Hubertus Bigend once before. She never meant to repeat the experience. But she's broke, and Bigend never feels it's beneath him to use whatever power comes his way — in this case, the power of money to bring Hollis onto his team again. Not that she knows what the “team” is up to, not at first.

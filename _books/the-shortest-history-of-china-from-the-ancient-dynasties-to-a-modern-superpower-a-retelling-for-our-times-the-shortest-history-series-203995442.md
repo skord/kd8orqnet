@@ -8,7 +8,7 @@ shelves:
 rating: 2
 date_added: '2026-05-28'
 year_published: 2021
-average_rating: 4.07
+average_rating: 4.11
 image: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1702920990l/203995442._SY475_.jpg
 description: |-
   Journey across epic China—through millennia of early innovation to modern dominance. The Shortest History books deliver thousands of years of history in one riveting, fast-paced read.
