@@ -4,9 +4,17 @@ layout: page
 permalink: /bicycles/
 ---
 
-![Bicycle](/assets/images/photos/bike/IMG_1367.jpeg "Roll C:1 City")
+
+## Kona Sutra (2026)
+
+
+![Bicycle](/assets/images/photos/IMG_0316.jpeg "Kona Sutra")
+
+I don't have much to say about this one yet, I only have about 15 miles on it. More to come as I ride it more.
 
 ## Roll C:1 City
+![Bicycle](/assets/images/photos/bike/IMG_1367.jpeg "Roll C:1 City")
+
 I bought this bike… I’m not really sure when. Roll still had a store on Lane Ave in Upper Arlington, they still had a shop in Chicago. The best I can pinpoint is sometimes after 2016 (I still had my Kona Jake then) and no later than October 2018. Roll has since not become a bicycle company anymore so it’s hard to say. 
 
 I’ve owned a lot of bikes. The Roll City served me really well, completely stock at least until 2023. The only change I made on it at somepoint in 2023 is swapping out the stock 700x35 tires with 700x28 gatorskins. 
@@ -19,6 +27,9 @@ The problem I had with the city bike in the end was that it wasn’t great for t
 
 ## Roll Adventure A:1R
 ![Bicycle](/assets/images/photos/bike/IMG_6418.jpeg "Roll Adventure A:1R")
+
+
+_Oct 2026 Update: The R now stands for "retired". This bike has gone into the donation pile at [Franklinton Cycle Works](https://franklintoncycleworks.company.site)_
 
 So I went back to Roll and looked at their touring / adventure options and came across the Adventure A:1R.
 
