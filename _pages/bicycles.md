@@ -89,9 +89,9 @@ Here’s the current rundown of my configuration:
   <div class="storage-item">
     <div class="storage-role">Carry More Stuff Rear Bags</div>
     <div class="storage-product">
-      Ortlieb Back-Roller XL Plus (Legacy)
+      Ortlieb Back-Roller Plus QL2.1
       <ul class="storage-attrs">
-        <li><span class="attr-label">Capacity:</span>35 liters per bag, 70 total</li>
+        <li><span class="attr-label">Capacity:</span>20 liters per bag, 40 total</li>
         <li><span class="attr-label">Material:</span>PS36C Cordura</li>
         <li><span class="attr-label">Mounting:</span>Quick-lock 2.1</li>
       </ul>
